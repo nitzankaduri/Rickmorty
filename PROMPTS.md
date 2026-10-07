@@ -16,3 +16,8 @@
 > פירוק הפרויקט ל-8 משימות עוקבות עם הגדרות Done when ברורות.
 
 - Completed: Created comprehensive tasks.md detailing all 8 milestones from initial setup to final verification and documentation sign-off.
+
+**18:28 · antigravity**
+> מימוש שירות שליפת נתונים מ-Rick and Morty API והצגת רשימת הדמויות ב-Master View עם מצבי טעינה ושגיאה.
+
+- Completed: Created Header, CharacterList, CharacterCard, LoadingState, and ErrorState components. Integrated native fetch inside useEffect in App.jsx with proper loading and error state handling.
