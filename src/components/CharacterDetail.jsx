@@ -26,7 +26,7 @@ export default function CharacterDetail({
       : 'status-unknown';
 
   const episodeCount = character.episode ? character.episode.length : 0;
-  const formattedId = `FOLIO № ${String(character.id).padStart(3, '0')}`;
+  const formattedId = `#${String(character.id).padStart(3, '0')}`;
 
   return (
     <div
@@ -41,12 +41,14 @@ export default function CharacterDetail({
         onClick={(e) => e.stopPropagation()}
       >
         <div className="modal-top-bar">
-          <span className="modal-folio-tag">{formattedId} // MULTIVERSE EXHIBIT</span>
+          <span className="modal-folio-tag">
+            [AS] ARCHIVE // ID: {formattedId}
+          </span>
           <button
             type="button"
             className="modal-close-button"
             onClick={onClose}
-            aria-label="Close monograph"
+            aria-label="Close details"
           >
             <svg
               width="18"
@@ -54,7 +56,7 @@ export default function CharacterDetail({
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
-              strokeWidth="1.5"
+              strokeWidth="2"
               strokeLinecap="round"
               strokeLinejoin="round"
               aria-hidden="true"
@@ -75,7 +77,7 @@ export default function CharacterDetail({
               />
             </div>
             <div className="detail-portrait-caption">
-              <span>CANONICAL PORTRAIT CAPTURE</span>
+              <span>MULTIVERSE ENTITY DOSSIER</span>
             </div>
           </div>
 
@@ -99,16 +101,16 @@ export default function CharacterDetail({
                     <svg
                       className="favorite-svg-icon"
                       viewBox="0 0 24 24"
-                      fill={isFavorite ? '#d4af37' : 'none'}
-                      stroke={isFavorite ? '#d4af37' : 'currentColor'}
-                      strokeWidth="1.5"
+                      fill={isFavorite ? '#fbbf24' : 'none'}
+                      stroke={isFavorite ? '#fbbf24' : 'currentColor'}
+                      strokeWidth="2"
                       strokeLinecap="round"
                       strokeLinejoin="round"
                       aria-hidden="true"
                     >
                       <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
                     </svg>
-                    <span>{isFavorite ? 'CURATED IN COLLECTION' : 'ADD TO CURATED COLLECTION'}</span>
+                    <span>{isFavorite ? 'IN FAVORITES' : 'ADD TO FAVORITES'}</span>
                   </button>
                 )}
               </div>
@@ -133,21 +135,21 @@ export default function CharacterDetail({
               )}
 
               <div className="spec-row">
-                <span className="spec-label">ORIGIN SPHERE</span>
+                <span className="spec-label">ORIGIN</span>
                 <span className="spec-value">
                   {character.origin?.name || 'Unknown'}
                 </span>
               </div>
 
               <div className="spec-row">
-                <span className="spec-label">CURRENT LOCUS</span>
+                <span className="spec-label">LAST LOCATION</span>
                 <span className="spec-value">
                   {character.location?.name || 'Unknown'}
                 </span>
               </div>
 
               <div className="spec-row">
-                <span className="spec-label">RECORDED APPEARANCES</span>
+                <span className="spec-label">EPISODES</span>
                 <span className="spec-value">
                   {episodeCount} {episodeCount === 1 ? 'Episode' : 'Episodes'}
                 </span>
@@ -160,7 +162,7 @@ export default function CharacterDetail({
                 className="detail-close-btn"
                 onClick={onClose}
               >
-                RETURN TO ARCHIVE
+                CLOSE DOSSIER
               </button>
             </div>
           </div>

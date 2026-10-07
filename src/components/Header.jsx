@@ -1,29 +1,38 @@
 export default function Header() {
   return (
-    <header className="app-header">
-      <div className="header-edition-badge">
-        <span>ARCHIVAL COLLECTION // EDITION 2026</span>
-      </div>
-      <div className="header-brand">
-        <div className="brand-talisman" aria-hidden="true">
-          <svg
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="1.25"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          >
-            <circle cx="12" cy="12" r="10" />
-            <polygon points="12 2 15 9 22 12 15 15 12 22 9 15 2 12 9 9" />
-            <circle cx="12" cy="12" r="3" />
-          </svg>
+    <header className="as-header-container">
+      {/* Adult Swim Top Navigation Bar */}
+      <nav className="as-top-navbar" aria-label="Adult Swim Navigation">
+        <div className="as-nav-left">
+          <div className="as-logo-badge" title="[adult swim]">
+            <span className="as-logo-text">[as]</span>
+          </div>
+          <ul className="as-nav-links">
+            <li className="active"><a href="#characters">CHARACTERS</a></li>
+            <li><a href="#shows">SHOWS</a></li>
+            <li><a href="#streams">STREAMS</a></li>
+            <li><a href="#dimensions">DIMENSIONS</a></li>
+            <li><a href="#games">GAMES</a></li>
+            <li><a href="#schedule">SCHEDULE</a></li>
+          </ul>
         </div>
-        <div className="brand-text">
-          <h1 className="header-title">RICK &amp; MORTY</h1>
-          <p className="header-subtitle">THE MULTIVERSE MONOGRAPH &amp; EXHIBITION</p>
+        <div className="as-nav-right">
+          <span className="as-portal-badge">DIMENSION C-137</span>
+        </div>
+      </nav>
+
+      {/* Hero Showcase with Floating House and Logo from Official Experience */}
+      <div className="as-hero-section">
+        <div className="as-hero-frame">
+          <img
+            src="/hero-scene.png"
+            alt="Rick and Morty floating house in space"
+            className="as-hero-img"
+          />
+          <div className="as-hero-bar">
+            <span className="as-hero-tag">MULTIVERSE CHARACTER DIRECTORY</span>
+            <span className="as-hero-subtag">ADULT SWIM ARCHIVES</span>
+          </div>
         </div>
       </div>
     </header>

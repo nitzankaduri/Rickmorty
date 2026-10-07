@@ -57,3 +57,8 @@
 
 - Completed: Redesigned visual identity with deep obsidian background gradients, razor-thin champagne gold borders, editorial serif typography (Cinzel & Cormorant Garamond), gallery 4:5 portrait cards with museum plaque tags, and a two-column exhibition monograph modal in src/index.css and components.
 
+**19:28 · antigravity**
+> עיצוב מחדש בסגנון האתר הרשמי זוכה הפרסים של Adult Swim ו-Rick and Morty (Awwwards): סרגל ניווט עליון [as], באנר הירו עם הבית המרחף בחלל והלוגו הזוהר, עיצוב כרטיסים ומודאל בהשראת Adult Swim.
+
+- Completed: Extracted and cropped official hero space scene with the floating Smith house and glowing title logo into public/hero-scene.png. Added Adult Swim [as] top navigation bar, updated typography with Archivo Black & Space Grotesk, styled cards and dossiers with authentic cyan and portal green highlights in src/index.css and components.
+

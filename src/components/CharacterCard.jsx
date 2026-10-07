@@ -24,7 +24,7 @@ export default function CharacterCard({
     }
   };
 
-  const formattedId = `№ ${String(character.id).padStart(3, '0')}`;
+  const formattedId = `#${String(character.id).padStart(3, '0')}`;
 
   return (
     <article
@@ -38,7 +38,7 @@ export default function CharacterCard({
       }}
       tabIndex={0}
       role="button"
-      aria-label={`View catalog exhibit for ${character.name}`}
+      aria-label={`View details for ${character.name}`}
     >
       <div className="card-image-frame">
         <img
@@ -47,21 +47,21 @@ export default function CharacterCard({
           className="card-image"
           loading="lazy"
         />
-        <div className="card-plaque-tag">{formattedId}</div>
+        <div className="card-id-tag">{formattedId}</div>
         {onToggleFavorite && (
           <button
             type="button"
             className={`card-favorite-btn ${isFavorite ? 'is-favorited' : ''}`}
             onClick={handleFavoriteClick}
-            aria-label={isFavorite ? `Remove ${character.name} from curated collection` : `Add ${character.name} to curated collection`}
-            title={isFavorite ? 'Curated exhibit' : 'Curate this exhibit'}
+            aria-label={isFavorite ? `Remove ${character.name} from favorites` : `Add ${character.name} to favorites`}
+            title={isFavorite ? 'In favorites' : 'Add to favorites'}
           >
             <svg
               className="favorite-svg-icon"
               viewBox="0 0 24 24"
-              fill={isFavorite ? '#d4af37' : 'none'}
-              stroke={isFavorite ? '#d4af37' : 'currentColor'}
-              strokeWidth="1.5"
+              fill={isFavorite ? '#fbbf24' : 'none'}
+              stroke={isFavorite ? '#fbbf24' : 'currentColor'}
+              strokeWidth="2"
               strokeLinecap="round"
               strokeLinejoin="round"
               aria-hidden="true"

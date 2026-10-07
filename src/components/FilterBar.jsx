@@ -13,7 +13,7 @@ export default function FilterBar({
     searchTerm.trim() !== '' || statusFilter !== 'all' || showFavoritesOnly;
 
   return (
-    <section className="filter-bar" aria-label="Archive navigation and curation">
+    <section className="filter-bar" aria-label="Search and filter characters">
       <div className="filter-controls">
         <div className="search-input-wrapper">
           <svg
@@ -21,7 +21,7 @@ export default function FilterBar({
             viewBox="0 0 24 24"
             fill="none"
             stroke="currentColor"
-            strokeWidth="1.5"
+            strokeWidth="2"
             strokeLinecap="round"
             strokeLinejoin="round"
             aria-hidden="true"
@@ -32,10 +32,10 @@ export default function FilterBar({
           <input
             type="search"
             className="search-input"
-            placeholder="SEARCH ARCHIVAL EXHIBITS (E.G. RICK, MORTY)..."
+            placeholder="SEARCH CHARACTERS (RICK, MORTY, BETH...)"
             value={searchTerm}
             onChange={(e) => onSearchChange(e.target.value)}
-            aria-label="Search archival exhibits"
+            aria-label="Search characters by name"
           />
         </div>
 
@@ -50,10 +50,10 @@ export default function FilterBar({
             onChange={(e) => onStatusChange(e.target.value)}
             aria-label="Filter by status"
           >
-            <option value="all">ALL STATUSES</option>
-            <option value="Alive">ALIVE</option>
-            <option value="Dead">DEAD</option>
-            <option value="unknown">UNKNOWN</option>
+            <option value="all">STATUS: ALL</option>
+            <option value="Alive">STATUS: ALIVE</option>
+            <option value="Dead">STATUS: DEAD</option>
+            <option value="unknown">STATUS: UNKNOWN</option>
           </select>
         </div>
 
@@ -67,16 +67,16 @@ export default function FilterBar({
             <svg
               className="fav-btn-svg"
               viewBox="0 0 24 24"
-              fill={showFavoritesOnly ? '#d4af37' : 'none'}
-              stroke="#d4af37"
-              strokeWidth="1.5"
+              fill={showFavoritesOnly ? '#fbbf24' : 'none'}
+              stroke="#fbbf24"
+              strokeWidth="2"
               strokeLinecap="round"
               strokeLinejoin="round"
               aria-hidden="true"
             >
               <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
             </svg>
-            <span>CURATED ({favoritesCount})</span>
+            <span>FAVORITES ({favoritesCount})</span>
           </button>
         )}
 
@@ -85,7 +85,7 @@ export default function FilterBar({
             type="button"
             className="clear-button"
             onClick={onReset}
-            title="Reset active query and filters"
+            title="Reset all filters"
           >
             RESET
           </button>
@@ -94,7 +94,7 @@ export default function FilterBar({
 
       <div className="filter-stats">
         <span className="stats-pill">
-          {resultCount} {resultCount === 1 ? 'EXHIBIT CATALOGED' : 'EXHIBITS CATALOGED'}
+          {resultCount} {resultCount === 1 ? 'CHARACTER LOADED' : 'CHARACTERS LOADED'}
         </span>
       </div>
     </section>
