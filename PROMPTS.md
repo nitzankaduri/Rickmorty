@@ -101,3 +101,9 @@
 > יצירה והטמעה של פורטרט סטודיו עריכתי אותנטי של ריק סנצ'ז בהשראת תמונת הרפרנס של Jay Cole: מעיל פוך כתום זוהר, משקפי שמש כתומים מרובעים עם תאורת ניאון, מריחת אור קולנועית (motion streak) סביב הצווארון, ותאורת אולפן חמה ואמיתית על גבי רקע שחור עמוק.
 
 - Completed: Replaced the flat 2D cartoon image with a high-fashion realistic Rick Sanchez editorial portrait (public/rick-jay-cole.jpg) matching the exact Jay Cole photo styling, orange puffer coat, translucent glowing glasses, and rim lighting. Seamlessly layered under the giant display title "Rick & Morty®" with lower-edge fade mask in src/components/Header.jsx and src/index.css.
+
+**21:55 · antigravity**
+> שחזור מדויק של תמונת ריק ומורטי המקורית והטמעה מלאה של הילת התאורה האחורית (Original Artwork Restoration & Backlight Aura): החזרת התמונה המקורית (https://pngimg.com/d/rick_morty_PNG2.png), שילוב הילת תאורה רדיאלית כתומה/ענברית זוהרת ומאומתת בצילום מסך, והתאמת שקיפות ומסכת דעיכה.
+
+- Completed: Restored original Rick & Morty artwork asset with local fallback in src/components/Header.jsx. Calibrated atmospheric backlight aura (.hero-atmospheric-aura and .hero-image-wrapper::before) with warm amber radial gradient, drop-shadow rim lighting, and verified rendered visual output via headless browser capture in src/index.css.
+
