@@ -184,8 +184,9 @@ body {
   padding-top: 0.5rem;
 }
 
-/* Layer 2: Central Portrait with bottom mask */
-.hero-artwork-frame {
+/* Layer 2: Central Portrait with bottom mask & Atmospheric Backlit Aura */
+.hero-artwork-frame,
+.hero-image-wrapper {
   position: relative;
   display: flex;
   justify-content: center;
@@ -194,7 +195,23 @@ body {
   z-index: 1;
 }
 
+.hero-image-wrapper::before {
+  content: '';
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -20%);
+  width: 380px;
+  height: 380px;
+  background: radial-gradient(circle, rgba(255, 94, 0, 0.35) 0%, rgba(255, 120, 0, 0.15) 45%, rgba(0, 0, 0, 0) 70%);
+  filter: blur(50px);
+  z-index: 0;
+  pointer-events: none;
+}
+
 .hero-action-image {
+  position: relative;
+  z-index: 1;
   max-height: 520px;
   width: auto;
   max-width: 90%;

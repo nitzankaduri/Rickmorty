@@ -87,3 +87,8 @@
 
 - Completed: Re-architected Header.jsx and index.css with exact 3-layer depth model. Added glowing amber dot (#ff5e00) pill badge with "Available", floating "Menu" capsule button with 2-bar icon, clamp(4.5rem, 14vw, 11rem) display title with 0.85 line-height and trademark badge, editorial columns with ::before orange corner marks, slate subtext (#737373), and responsive container spacing.
 
+**21:32 · antigravity**
+> ליטוש חזותי (Visual Polish): הוספת הילת תאורה אטמוספרית אחורית (Warm Amber Atmospheric Backlight Aura) מאחורי תמונת הדמות באמצעות שכבת pseudo-element עם radial-gradient בגווני כתום עמוק וטשטוש עשיר.
+
+- Completed: Implemented .hero-image-wrapper::before atmospheric aura with radial-gradient(circle, rgba(255, 94, 0, 0.35) 0%, rgba(255, 120, 0, 0.15) 45%, rgba(0, 0, 0, 0) 70%), 50px blur, and depth layering behind the masked character visual in src/components/Header.jsx and src/index.css.
+

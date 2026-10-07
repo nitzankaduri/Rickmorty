@@ -45,8 +45,8 @@ export default function Header() {
 
       {/* Hero Stage: 3D Depth Layering (Portrait in Layer 2, Title in Layer 3) */}
       <div className="hero-stage">
-        {/* Layer 2: Character Portrait with bottom fade mask */}
-        <div className="hero-artwork-frame">
+        {/* Layer 2: Character Portrait with bottom fade mask and atmospheric aura */}
+        <div className="hero-artwork-frame hero-image-wrapper">
           {!hasError && (
             <img
               src={imageSrc}
