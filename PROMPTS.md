@@ -102,8 +102,8 @@
 
 - Completed: Replaced the flat 2D cartoon image with a high-fashion realistic Rick Sanchez editorial portrait (public/rick-jay-cole.jpg) matching the exact Jay Cole photo styling, orange puffer coat, translucent glowing glasses, and rim lighting. Seamlessly layered under the giant display title "Rick & Morty®" with lower-edge fade mask in src/components/Header.jsx and src/index.css.
 
-**21:55 · antigravity**
-> שחזור מדויק של תמונת ריק ומורטי המקורית והטמעה מלאה של הילת התאורה האחורית (Original Artwork Restoration & Backlight Aura): החזרת התמונה המקורית (https://pngimg.com/d/rick_morty_PNG2.png), שילוב הילת תאורה רדיאלית כתומה/ענברית זוהרת ומאומתת בצילום מסך, והתאמת שקיפות ומסכת דעיכה.
+**22:18 · antigravity**
+> הטמעת תמונת הציור המדויקת של ריק סנצ'ז (rick_morty_PNG3.png) עם חלוק המעבדה והילת התאורה האחורית: שילוב תמונת ה-PNG השקופה עם הילת תאורה רדיאלית ענברית מרהיבה, מסכת דעיכה לשחור בחלק התחתון וחפיפת כותרת ענקית בסגנון Jay Cole.
 
-- Completed: Restored original Rick & Morty artwork asset with local fallback in src/components/Header.jsx. Calibrated atmospheric backlight aura (.hero-atmospheric-aura and .hero-image-wrapper::before) with warm amber radial gradient, drop-shadow rim lighting, and verified rendered visual output via headless browser capture in src/index.css.
+- Completed: Integrated official PNG vector asset https://pngimg.com/d/rick_morty_PNG3.png with local caching in public/rick_morty_PNG3.png. Styled with .hero-atmospheric-aura (warm amber radial gradient), rim drop-shadow, and linear-gradient bottom fade mask layered directly under the massive display title "Rick & Morty®" in src/components/Header.jsx and src/index.css.
 

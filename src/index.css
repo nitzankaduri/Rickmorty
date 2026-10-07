@@ -187,11 +187,11 @@ body {
 /* Layer 1: Atmospheric Backlight Glow (Warm Amber Studio Aura) */
 .hero-atmospheric-aura {
   position: absolute;
-  top: 25%;
+  top: 30%;
   left: 50%;
-  transform: translate(-50%, -25%);
-  width: 500px;
-  height: 500px;
+  transform: translate(-50%, -30%);
+  width: 540px;
+  height: 540px;
   max-width: 90vw;
   max-height: 90vw;
   border-radius: 50%;
@@ -203,7 +203,7 @@ body {
     rgba(255, 94, 0, 0.05) 70%,
     transparent 80%
   );
-  filter: blur(45px);
+  filter: blur(50px);
   z-index: 0;
   pointer-events: none;
 }
@@ -225,9 +225,9 @@ body {
   top: 20%;
   left: 50%;
   transform: translate(-50%, -20%);
-  width: 420px;
-  height: 420px;
-  background: radial-gradient(circle, rgba(255, 94, 0, 0.5) 0%, rgba(255, 120, 0, 0.25) 45%, rgba(0, 0, 0, 0) 70%);
+  width: 380px;
+  height: 380px;
+  background: radial-gradient(circle, rgba(255, 94, 0, 0.6) 0%, rgba(255, 120, 0, 0.3) 45%, rgba(0, 0, 0, 0) 70%);
   filter: blur(45px);
   z-index: 0;
   pointer-events: none;
@@ -244,7 +244,7 @@ body {
   margin: 0 auto;
   -webkit-mask-image: linear-gradient(to bottom, black 65%, transparent 98%);
   mask-image: linear-gradient(to bottom, black 65%, transparent 98%);
-  filter: drop-shadow(0 0 35px rgba(255, 94, 0, 0.5)) drop-shadow(0 20px 45px rgba(0, 0, 0, 0.95));
+  filter: drop-shadow(0 0 35px rgba(255, 94, 0, 0.55)) drop-shadow(0 20px 45px rgba(0, 0, 0, 0.95));
   transition: transform 0.4s ease;
 }
 
@@ -254,7 +254,7 @@ body {
 
 /* Layer 3: Foreground Display Title Overlapping the Portrait */
 .hero-display-title {
-  margin: -90px 0 0;
+  margin: -95px 0 0;
   position: relative;
   z-index: 3;
   font-size: clamp(4.5rem, 14vw, 11rem);

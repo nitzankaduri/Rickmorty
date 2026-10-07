@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
-const PRIMARY_IMG = 'https://pngimg.com/d/rick_morty_PNG2.png';
-const LOCAL_FALLBACK = '/rick_morty_action.png';
+const PRIMARY_IMG = 'https://pngimg.com/d/rick_morty_PNG3.png';
+const LOCAL_FALLBACK = '/rick_morty_PNG3.png';
 
 export default function Header() {
   const [imageSrc, setImageSrc] = useState(PRIMARY_IMG);
@@ -33,14 +33,14 @@ export default function Header() {
 
       {/* Hero Stage: 3D Depth Layering (Aura in Layer 1, Portrait in Layer 2, Title in Layer 3) */}
       <div className="hero-stage">
-        {/* Layer 1: Warm Amber Atmospheric Glow Behind Image */}
+        {/* Layer 1: Atmospheric Backlight Aura (Warm Studio Lighting) */}
         <div className="hero-atmospheric-aura" aria-hidden="true" />
 
         {/* Layer 2: Character Portrait with bottom fade mask */}
         <div className="hero-artwork-frame hero-image-wrapper">
           <img
             src={imageSrc}
-            alt="Rick and Morty dynamic action visual"
+            alt="Rick Sanchez cartoon portrait in lab coat"
             className="hero-action-image"
             onError={() => setImageSrc(LOCAL_FALLBACK)}
             loading="eager"
