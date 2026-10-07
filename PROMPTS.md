@@ -11,3 +11,8 @@
 > הגדרת מסמך PRD מקיף עבור Rick and Morty Explorer לפי הנחיות פרויקט הגמר.
 
 - Completed: Created comprehensive PRD.md with pitch, user personas, screens, core features, acceptance criteria, and data contract.
+
+**18:18 · antigravity**
+> פירוק הפרויקט ל-8 משימות עוקבות עם הגדרות Done when ברורות.
+
+- Completed: Created comprehensive tasks.md detailing all 8 milestones from initial setup to final verification and documentation sign-off.
