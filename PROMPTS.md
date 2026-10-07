@@ -26,3 +26,8 @@
 > מימוש תצוגת פרטים מורחבת (Detail View) בלחיצה על כרטיס דמות עם העברת נתונים ב-props וניהול state.
 
 - Completed: Created CharacterDetail component displaying species, status, gender, origin planet, location, and episode count. Wired selectedCharacter state and modal close handlers in App.jsx.
+
+**18:48 · antigravity**
+> עיצוב ממשק רספונסיבי מודרני בסגנון Rick & Morty Sci-Fi (גריד כרטיסים, אפקטי hover, טיפוגרפיה, מודאל ומצבי מערכת).
+
+- Completed: Overhauled src/index.css with dark sci-fi theme variables, responsive CSS grid, card hover elevations, glowing status indicators, modal transitions, and mobile breakpoints.
