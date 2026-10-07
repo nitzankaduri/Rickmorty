@@ -3,10 +3,14 @@ export default function FilterBar({
   onSearchChange,
   statusFilter,
   onStatusChange,
+  showFavoritesOnly = false,
+  onToggleFavoritesOnly,
+  favoritesCount = 0,
   resultCount,
   onReset
 }) {
-  const isFiltered = searchTerm.trim() !== '' || statusFilter !== 'all';
+  const isFiltered =
+    searchTerm.trim() !== '' || statusFilter !== 'all' || showFavoritesOnly;
 
   return (
     <section className="filter-bar" aria-label="Search and filter characters">
@@ -40,6 +44,17 @@ export default function FilterBar({
             <option value="unknown">Unknown</option>
           </select>
         </div>
+
+        {onToggleFavoritesOnly && (
+          <button
+            type="button"
+            className={`filter-fav-btn ${showFavoritesOnly ? 'active' : ''}`}
+            onClick={onToggleFavoritesOnly}
+            aria-pressed={showFavoritesOnly}
+          >
+            ★ Favorites ({favoritesCount})
+          </button>
+        )}
 
         {isFiltered && (
           <button

@@ -36,3 +36,8 @@
 > הוספת שורת חיפוש בזמן אמת לפי שם וסינון לפי סטטוס כולל טיפול במצב ריק (Empty State).
 
 - Completed: Created FilterBar and EmptyState components. Implemented real-time case-insensitive filtering by character name and status, with search reset controls and result counting in App.jsx and src/index.css.
+
+**19:08 · antigravity**
+> מימוש תכונת מועדפים עם כפתור סימון, שמירה אוטומטית ב-localStorage וסינון מועדפים.
+
+- Completed: Added localStorage persistence for favorite character IDs in App.jsx. Wired favorite toggle on CharacterCard and CharacterDetail, and added a quick Favorites Only toggle button and count badge in FilterBar.

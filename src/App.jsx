@@ -8,6 +8,7 @@ import ErrorState from './components/ErrorState';
 import EmptyState from './components/EmptyState';
 
 const API_URL = 'https://rickandmortyapi.com/api/character';
+const STORAGE_KEY = 'rick_morty_favorites';
 
 export default function App() {
   const [characters, setCharacters] = useState([]);
@@ -16,6 +17,24 @@ export default function App() {
   const [selectedCharacter, setSelectedCharacter] = useState(null);
   const [searchTerm, setSearchTerm] = useState('');
   const [statusFilter, setStatusFilter] = useState('all');
+  const [showFavoritesOnly, setShowFavoritesOnly] = useState(false);
+
+  const [favorites, setFavorites] = useState(() => {
+    try {
+      const saved = localStorage.getItem(STORAGE_KEY);
+      return saved ? JSON.parse(saved) : [];
+    } catch {
+      return [];
+    }
+  });
+
+  useEffect(() => {
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(favorites));
+    } catch (err) {
+      console.error('Failed to save favorites to localStorage', err);
+    }
+  }, [favorites]);
 
   const fetchCharacters = () => {
     setLoading(true);
@@ -66,9 +85,16 @@ export default function App() {
     };
   }, []);
 
+  const handleToggleFavorite = (id) => {
+    setFavorites((prev) =>
+      prev.includes(id) ? prev.filter((favId) => favId !== id) : [...prev, id]
+    );
+  };
+
   const handleResetFilters = () => {
     setSearchTerm('');
     setStatusFilter('all');
+    setShowFavoritesOnly(false);
   };
 
   const filteredCharacters = characters.filter((character) => {
@@ -78,7 +104,9 @@ export default function App() {
     const matchesStatus =
       statusFilter === 'all' ||
       character.status.toLowerCase() === statusFilter.toLowerCase();
-    return matchesName && matchesStatus;
+    const matchesFavorite = !showFavoritesOnly || favorites.includes(character.id);
+
+    return matchesName && matchesStatus && matchesFavorite;
   });
 
   return (
@@ -94,6 +122,9 @@ export default function App() {
               onSearchChange={setSearchTerm}
               statusFilter={statusFilter}
               onStatusChange={setStatusFilter}
+              showFavoritesOnly={showFavoritesOnly}
+              onToggleFavoritesOnly={() => setShowFavoritesOnly((prev) => !prev)}
+              favoritesCount={favorites.length}
               resultCount={filteredCharacters.length}
               onReset={handleResetFilters}
             />
@@ -102,12 +133,15 @@ export default function App() {
               <EmptyState
                 searchTerm={searchTerm}
                 statusFilter={statusFilter}
+                showFavoritesOnly={showFavoritesOnly}
                 onReset={handleResetFilters}
               />
             ) : (
               <CharacterList
                 characters={filteredCharacters}
                 onSelectCharacter={(char) => setSelectedCharacter(char)}
+                favorites={favorites}
+                onToggleFavorite={handleToggleFavorite}
               />
             )}
           </>
@@ -117,6 +151,8 @@ export default function App() {
           <CharacterDetail
             character={selectedCharacter}
             onClose={() => setSelectedCharacter(null)}
+            isFavorite={favorites.includes(selectedCharacter.id)}
+            onToggleFavorite={handleToggleFavorite}
           />
         )}
       </main>
