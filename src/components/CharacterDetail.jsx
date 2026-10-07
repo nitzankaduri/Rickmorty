@@ -66,9 +66,9 @@ export default function CharacterDetail({
               </h2>
 
               <div className="detail-badges-row">
-                <div className="detail-status-pill">
+                <div className={`status-pill ${statusColorClass}-pill`}>
                   <span className={`status-dot ${statusColorClass}`} />
-                  <span className="status-text-pill">{character.status}</span>
+                  <span>{character.status}</span>
                 </div>
                 {onToggleFavorite && (
                   <button
@@ -79,8 +79,8 @@ export default function CharacterDetail({
                     <svg
                       className="favorite-svg-icon"
                       viewBox="0 0 24 24"
-                      fill={isFavorite ? '#eab308' : 'none'}
-                      stroke={isFavorite ? '#eab308' : 'currentColor'}
+                      fill={isFavorite ? '#10b981' : 'none'}
+                      stroke={isFavorite ? '#10b981' : 'currentColor'}
                       strokeWidth="2"
                       strokeLinecap="round"
                       strokeLinejoin="round"
@@ -88,45 +88,45 @@ export default function CharacterDetail({
                     >
                       <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
                     </svg>
-                    <span>{isFavorite ? 'Saved' : 'Save to Favorites'}</span>
+                    <span>{isFavorite ? 'In Favorites' : 'Add to Favorites'}</span>
                   </button>
                 )}
               </div>
             </div>
 
             <div className="detail-spec-sheet">
-              <div className="spec-row">
+              <div className="spec-card">
                 <span className="spec-label">Species</span>
                 <span className="spec-value">{character.species || 'Unknown'}</span>
               </div>
 
-              <div className="spec-row">
+              <div className="spec-card">
                 <span className="spec-label">Gender</span>
                 <span className="spec-value">{character.gender || 'Unknown'}</span>
               </div>
 
               {character.type && (
-                <div className="spec-row">
+                <div className="spec-card">
                   <span className="spec-label">Type</span>
                   <span className="spec-value">{character.type}</span>
                 </div>
               )}
 
-              <div className="spec-row">
-                <span className="spec-label">Origin</span>
+              <div className="spec-card">
+                <span className="spec-label">Origin Planet</span>
                 <span className="spec-value">
                   {character.origin?.name || 'Unknown'}
                 </span>
               </div>
 
-              <div className="spec-row">
-                <span className="spec-label">Location</span>
+              <div className="spec-card">
+                <span className="spec-label">Current Location</span>
                 <span className="spec-value">
                   {character.location?.name || 'Unknown'}
                 </span>
               </div>
 
-              <div className="spec-row">
+              <div className="spec-card">
                 <span className="spec-label">Episodes</span>
                 <span className="spec-value">
                   {episodeCount} {episodeCount === 1 ? 'Episode' : 'Episodes'}

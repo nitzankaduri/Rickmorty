@@ -56,8 +56,8 @@ export default function CharacterCard({
             <svg
               className="favorite-svg-icon"
               viewBox="0 0 24 24"
-              fill={isFavorite ? '#eab308' : 'none'}
-              stroke={isFavorite ? '#eab308' : 'currentColor'}
+              fill={isFavorite ? '#10b981' : 'none'}
+              stroke={isFavorite ? '#10b981' : 'currentColor'}
               strokeWidth="2"
               strokeLinecap="round"
               strokeLinejoin="round"
@@ -70,16 +70,19 @@ export default function CharacterCard({
       </div>
 
       <div className="card-body">
-        <h3 className="card-name" title={character.name}>
-          {character.name}
-        </h3>
+        <div className="card-header-row">
+          <h3 className="card-name" title={character.name}>
+            {character.name}
+          </h3>
+          <span className="card-arrow" aria-hidden="true">↗</span>
+        </div>
+
         <div className="card-meta-row">
-          <span className="card-species">{character.species}</span>
-          <span className="card-meta-dot" aria-hidden="true">·</span>
-          <div className="card-status-wrapper">
+          <span className={`status-pill ${statusColorClass}-pill`}>
             <span className={`status-dot ${statusColorClass}`} aria-hidden="true" />
-            <span className="status-name">{character.status}</span>
-          </div>
+            <span>{character.status}</span>
+          </span>
+          <span className="card-species">{character.species}</span>
         </div>
       </div>
     </article>

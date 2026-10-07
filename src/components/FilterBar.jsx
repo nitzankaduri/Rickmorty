@@ -13,7 +13,7 @@ export default function FilterBar({
     searchTerm.trim() !== '' || statusFilter !== 'all' || showFavoritesOnly;
 
   return (
-    <section className="filter-bar" aria-label="Search and filter characters">
+    <section className="filter-bar" aria-label="Search and filter collection">
       <div className="filter-controls">
         <div className="search-input-wrapper">
           <svg
@@ -32,7 +32,7 @@ export default function FilterBar({
           <input
             type="search"
             className="search-input"
-            placeholder="Search characters (e.g. Rick, Morty)..."
+            placeholder="Search characters (Rick, Morty, Beth...)"
             value={searchTerm}
             onChange={(e) => onSearchChange(e.target.value)}
             aria-label="Search characters by name"
@@ -67,8 +67,8 @@ export default function FilterBar({
             <svg
               className="fav-btn-svg"
               viewBox="0 0 24 24"
-              fill={showFavoritesOnly ? '#eab308' : 'none'}
-              stroke="#eab308"
+              fill={showFavoritesOnly ? '#10b981' : 'none'}
+              stroke={showFavoritesOnly ? '#10b981' : 'currentColor'}
               strokeWidth="2"
               strokeLinecap="round"
               strokeLinejoin="round"
@@ -87,14 +87,14 @@ export default function FilterBar({
             onClick={onReset}
             title="Reset filters"
           >
-            Clear
+            Reset
           </button>
         )}
       </div>
 
       <div className="filter-stats">
         <span className="stats-pill">
-          {resultCount} {resultCount === 1 ? 'character' : 'characters'}
+          {resultCount} {resultCount === 1 ? 'entity found' : 'entities found'}
         </span>
       </div>
     </section>

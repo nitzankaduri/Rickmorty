@@ -1,14 +1,15 @@
 export default function ErrorState({
-  message = 'Failed to load characters from dimension.',
+  message = 'Dimension signal interrupted. Unable to sync character data.',
   onRetry
 }) {
   return (
     <div className="status-container error-state" role="alert">
-      <h3 className="error-title">Connection Error</h3>
+      <div className="status-symbol" aria-hidden="true">✦</div>
+      <h3 className="error-title">Dimension Disconnected</h3>
       <p className="status-text">{message}</p>
       {onRetry && (
         <button type="button" className="retry-button" onClick={onRetry}>
-          Try Again
+          Reopen Portal ↗
         </button>
       )}
     </div>
