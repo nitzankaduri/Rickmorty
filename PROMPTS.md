@@ -21,3 +21,8 @@
 > מימוש שירות שליפת נתונים מ-Rick and Morty API והצגת רשימת הדמויות ב-Master View עם מצבי טעינה ושגיאה.
 
 - Completed: Created Header, CharacterList, CharacterCard, LoadingState, and ErrorState components. Integrated native fetch inside useEffect in App.jsx with proper loading and error state handling.
+
+**18:38 · antigravity**
+> מימוש תצוגת פרטים מורחבת (Detail View) בלחיצה על כרטיס דמות עם העברת נתונים ב-props וניהול state.
+
+- Completed: Created CharacterDetail component displaying species, status, gender, origin planet, location, and episode count. Wired selectedCharacter state and modal close handlers in App.jsx.

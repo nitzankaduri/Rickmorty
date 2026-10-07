@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import Header from './components/Header';
 import CharacterList from './components/CharacterList';
+import CharacterDetail from './components/CharacterDetail';
 import LoadingState from './components/LoadingState';
 import ErrorState from './components/ErrorState';
 
@@ -10,6 +11,7 @@ export default function App() {
   const [characters, setCharacters] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [selectedCharacter, setSelectedCharacter] = useState(null);
 
   const fetchCharacters = () => {
     setLoading(true);
@@ -69,7 +71,13 @@ export default function App() {
         {!loading && !error && (
           <CharacterList
             characters={characters}
-            onSelectCharacter={() => {}}
+            onSelectCharacter={(char) => setSelectedCharacter(char)}
+          />
+        )}
+        {selectedCharacter && (
+          <CharacterDetail
+            character={selectedCharacter}
+            onClose={() => setSelectedCharacter(null)}
           />
         )}
       </main>
