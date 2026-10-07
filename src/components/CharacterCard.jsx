@@ -56,8 +56,8 @@ export default function CharacterCard({
             <svg
               className="favorite-svg-icon"
               viewBox="0 0 24 24"
-              fill={isFavorite ? '#10b981' : 'none'}
-              stroke={isFavorite ? '#10b981' : 'currentColor'}
+              fill={isFavorite ? '#f59e0b' : 'none'}
+              stroke={isFavorite ? '#f59e0b' : 'currentColor'}
               strokeWidth="2"
               strokeLinecap="round"
               strokeLinejoin="round"

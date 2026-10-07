@@ -67,8 +67,8 @@ export default function FilterBar({
             <svg
               className="fav-btn-svg"
               viewBox="0 0 24 24"
-              fill={showFavoritesOnly ? '#10b981' : 'none'}
-              stroke={showFavoritesOnly ? '#10b981' : 'currentColor'}
+              fill={showFavoritesOnly ? '#f59e0b' : 'none'}
+              stroke={showFavoritesOnly ? '#f59e0b' : 'currentColor'}
               strokeWidth="2"
               strokeLinecap="round"
               strokeLinejoin="round"

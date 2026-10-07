@@ -112,7 +112,7 @@ export default function App() {
   return (
     <div className="app-container">
       <Header />
-      <main className="main-content">
+      <main className="main-content" id="characters">
         {loading && <LoadingState message="Connecting to dimension C-137..." />}
         {!loading && error && <ErrorState message={error} onRetry={fetchCharacters} />}
         {!loading && !error && (
