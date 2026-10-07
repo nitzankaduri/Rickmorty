@@ -24,6 +24,8 @@ export default function CharacterCard({
     }
   };
 
+  const formattedId = `№ ${String(character.id).padStart(3, '0')}`;
+
   return (
     <article
       className="character-card"
@@ -36,7 +38,7 @@ export default function CharacterCard({
       }}
       tabIndex={0}
       role="button"
-      aria-label={`View details for ${character.name}`}
+      aria-label={`View catalog exhibit for ${character.name}`}
     >
       <div className="card-image-frame">
         <img
@@ -45,20 +47,21 @@ export default function CharacterCard({
           className="card-image"
           loading="lazy"
         />
+        <div className="card-plaque-tag">{formattedId}</div>
         {onToggleFavorite && (
           <button
             type="button"
             className={`card-favorite-btn ${isFavorite ? 'is-favorited' : ''}`}
             onClick={handleFavoriteClick}
-            aria-label={isFavorite ? `Remove ${character.name} from favorites` : `Add ${character.name} to favorites`}
-            title={isFavorite ? 'Remove favorite' : 'Add favorite'}
+            aria-label={isFavorite ? `Remove ${character.name} from curated collection` : `Add ${character.name} to curated collection`}
+            title={isFavorite ? 'Curated exhibit' : 'Curate this exhibit'}
           >
             <svg
               className="favorite-svg-icon"
               viewBox="0 0 24 24"
-              fill={isFavorite ? '#f59e0b' : 'none'}
-              stroke={isFavorite ? '#f59e0b' : 'currentColor'}
-              strokeWidth="2"
+              fill={isFavorite ? '#d4af37' : 'none'}
+              stroke={isFavorite ? '#d4af37' : 'currentColor'}
+              strokeWidth="1.5"
               strokeLinecap="round"
               strokeLinejoin="round"
               aria-hidden="true"
@@ -74,11 +77,11 @@ export default function CharacterCard({
           {character.name}
         </h3>
         <div className="card-meta-row">
-          <span className="card-species">{character.species}</span>
-          <span className="card-meta-divider" aria-hidden="true">·</span>
+          <span className="card-species">{character.species.toUpperCase()}</span>
+          <span className="card-meta-divider" aria-hidden="true">//</span>
           <div className="card-status-wrapper">
             <span className={`status-dot ${statusColorClass}`} aria-hidden="true" />
-            <span className="status-name">{character.status}</span>
+            <span className="status-name">{character.status.toUpperCase()}</span>
           </div>
         </div>
       </div>

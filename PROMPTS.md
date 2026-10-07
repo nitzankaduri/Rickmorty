@@ -51,3 +51,9 @@
 > שדרוג ועידון ממשק משתמש (UI/UX Refinement) — מעבר למראה כהה מקצועי, מאופק ויוקרתי (Linear/Vercel/Apple dark mode) ללא זוהרי ניאון.
 
 - Completed: Refactored character card with internal padding, rounded image frame with overflow hidden, clean typography hierarchy, subtle status dots, crisp SVG star favorite buttons, responsive 4-column grid, and refined dark charcoal surface palettes across src/index.css and components.
+
+**18:38 · antigravity**
+> עיצוב מחדש של זהות המותג: סגנון יוקרתי אפל, עריכתי ותערוכתי (Luxury Dark Editorial & Exhibition Gallery) עם גווני שחור פחם, זהב שמפניה, טיפוגרפיית סריף ותצוגת מונוגרפיה.
+
+- Completed: Redesigned visual identity with deep obsidian background gradients, razor-thin champagne gold borders, editorial serif typography (Cinzel & Cormorant Garamond), gallery 4:5 portrait cards with museum plaque tags, and a two-column exhibition monograph modal in src/index.css and components.
+

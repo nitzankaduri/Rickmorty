@@ -6,16 +6,16 @@ export default function EmptyState({
 }) {
   return (
     <div className="status-container empty-state" role="status">
-      <span className="empty-icon" role="img" aria-label="telescope">🔭</span>
-      <h3 className="empty-title">No Characters Found</h3>
+      <div className="status-symbol" aria-hidden="true">◇</div>
+      <h3 className="empty-title">NO CORRESPONDING EXHIBITS FOUND</h3>
       <p className="status-text">
         {showFavoritesOnly && !searchTerm && statusFilter === 'all'
-          ? 'You have not added any characters to your favorites yet. Click the star icon (★) on any card to favorite them!'
-          : `No beings in dimension C-137 matched your criteria${
+          ? 'Your curated collection contains no exhibits yet. Mark any exhibit with the talisman star to add it to your private collection.'
+          : `No dimensional entities match your query${
               searchTerm ? ` "${searchTerm}"` : ''
             }${
-              statusFilter !== 'all' ? ` with status "${statusFilter}"` : ''
-            }${showFavoritesOnly ? ' within your favorites' : ''}.`}
+              statusFilter !== 'all' ? ` under status "${statusFilter}"` : ''
+            }${showFavoritesOnly ? ' within your curated collection' : ''}.`}
       </p>
       {onReset && (
         <button
@@ -23,10 +23,9 @@ export default function EmptyState({
           className="reset-filters-btn"
           onClick={onReset}
         >
-          Reset Search &amp; Filters
+          RESET CURATION FILTERS
         </button>
       )}
     </div>
   );
 }
-

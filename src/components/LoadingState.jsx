@@ -1,9 +1,8 @@
-export default function LoadingState({ message = 'Scanning dimensions...' }) {
+export default function LoadingState({ message = 'ACCESSING MULTIVERSE ARCHIVES...' }) {
   return (
-    <div className="status-container loading-state">
-      <div className="portal-spinner" aria-hidden="true" />
+    <div className="status-container loading-state" role="status">
+      <div className="monograph-spinner" aria-hidden="true" />
       <p className="status-text">{message}</p>
     </div>
   );
 }
-
