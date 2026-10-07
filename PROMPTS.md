@@ -46,3 +46,8 @@
 > ביקורת איכות סופית, הרצת בדיקות build ו-lint, בדיקת שלמות הקוד והמחוון, ואישור תיעוד.
 
 - Completed: Verified zero lint warnings and successful production build with Vite. All 8 tasks verified in tasks.md, all mandatory rubric criteria achieved, documentation finalized.
+
+**18:24 · antigravity**
+> שדרוג ועידון ממשק משתמש (UI/UX Refinement) — מעבר למראה כהה מקצועי, מאופק ויוקרתי (Linear/Vercel/Apple dark mode) ללא זוהרי ניאון.
+
+- Completed: Refactored character card with internal padding, rounded image frame with overflow hidden, clean typography hierarchy, subtle status dots, crisp SVG star favorite buttons, responsive 4-column grid, and refined dark charcoal surface palettes across src/index.css and components.

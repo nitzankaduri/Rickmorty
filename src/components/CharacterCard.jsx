@@ -38,7 +38,7 @@ export default function CharacterCard({
       role="button"
       aria-label={`View details for ${character.name}`}
     >
-      <div className="card-image-wrapper">
+      <div className="card-image-frame">
         <img
           src={character.image}
           alt={character.name}
@@ -48,23 +48,38 @@ export default function CharacterCard({
         {onToggleFavorite && (
           <button
             type="button"
-            className={`favorite-button ${isFavorite ? 'active' : ''}`}
+            className={`card-favorite-btn ${isFavorite ? 'is-favorited' : ''}`}
             onClick={handleFavoriteClick}
             aria-label={isFavorite ? `Remove ${character.name} from favorites` : `Add ${character.name} to favorites`}
             title={isFavorite ? 'Remove favorite' : 'Add favorite'}
           >
-            ★
+            <svg
+              className="favorite-svg-icon"
+              viewBox="0 0 24 24"
+              fill={isFavorite ? '#f59e0b' : 'none'}
+              stroke={isFavorite ? '#f59e0b' : 'currentColor'}
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              aria-hidden="true"
+            >
+              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+            </svg>
           </button>
         )}
       </div>
 
-      <div className="card-content">
-        <h3 className="card-name" title={character.name}>{character.name}</h3>
-        <div className="card-meta">
-          <span className={`status-indicator ${statusColorClass}`} />
-          <span className="status-label">
-            {character.status} — {character.species}
-          </span>
+      <div className="card-body">
+        <h3 className="card-name" title={character.name}>
+          {character.name}
+        </h3>
+        <div className="card-meta-row">
+          <span className="card-species">{character.species}</span>
+          <span className="card-meta-divider" aria-hidden="true">·</span>
+          <div className="card-status-wrapper">
+            <span className={`status-dot ${statusColorClass}`} aria-hidden="true" />
+            <span className="status-name">{character.status}</span>
+          </div>
         </div>
       </div>
     </article>

@@ -12,3 +12,4 @@ export default function ErrorState({ message = 'Portal malfunction! Failed to lo
     </div>
   );
 }
+

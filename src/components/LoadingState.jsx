@@ -6,3 +6,4 @@ export default function LoadingState({ message = 'Scanning dimensions...' }) {
     </div>
   );
 }
+
