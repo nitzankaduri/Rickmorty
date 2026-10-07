@@ -32,7 +32,7 @@ export default function FilterBar({
           <input
             type="search"
             className="search-input"
-            placeholder="SEARCH CHARACTERS (RICK, MORTY, BETH...)"
+            placeholder="Search characters (e.g. Rick, Morty)..."
             value={searchTerm}
             onChange={(e) => onSearchChange(e.target.value)}
             aria-label="Search characters by name"
@@ -50,10 +50,10 @@ export default function FilterBar({
             onChange={(e) => onStatusChange(e.target.value)}
             aria-label="Filter by status"
           >
-            <option value="all">STATUS: ALL</option>
-            <option value="Alive">STATUS: ALIVE</option>
-            <option value="Dead">STATUS: DEAD</option>
-            <option value="unknown">STATUS: UNKNOWN</option>
+            <option value="all">All Statuses</option>
+            <option value="Alive">Alive</option>
+            <option value="Dead">Dead</option>
+            <option value="unknown">Unknown</option>
           </select>
         </div>
 
@@ -67,8 +67,8 @@ export default function FilterBar({
             <svg
               className="fav-btn-svg"
               viewBox="0 0 24 24"
-              fill={showFavoritesOnly ? '#fbbf24' : 'none'}
-              stroke="#fbbf24"
+              fill={showFavoritesOnly ? '#eab308' : 'none'}
+              stroke="#eab308"
               strokeWidth="2"
               strokeLinecap="round"
               strokeLinejoin="round"
@@ -76,7 +76,7 @@ export default function FilterBar({
             >
               <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
             </svg>
-            <span>FAVORITES ({favoritesCount})</span>
+            <span>Favorites ({favoritesCount})</span>
           </button>
         )}
 
@@ -85,16 +85,16 @@ export default function FilterBar({
             type="button"
             className="clear-button"
             onClick={onReset}
-            title="Reset all filters"
+            title="Reset filters"
           >
-            RESET
+            Clear
           </button>
         )}
       </div>
 
       <div className="filter-stats">
         <span className="stats-pill">
-          {resultCount} {resultCount === 1 ? 'CHARACTER LOADED' : 'CHARACTERS LOADED'}
+          {resultCount} {resultCount === 1 ? 'character' : 'characters'}
         </span>
       </div>
     </section>

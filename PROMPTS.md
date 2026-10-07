@@ -62,3 +62,9 @@
 
 - Completed: Extracted and cropped official hero space scene with the floating Smith house and glowing title logo into public/hero-scene.png. Added Adult Swim [as] top navigation bar, updated typography with Archivo Black & Space Grotesk, styled cards and dossiers with authentic cyan and portal green highlights in src/index.css and components.
 
+**19:54 · antigravity**
+> הסרת באנר ה-Hero הגדול, ומעבר לעיצוב שחור נקי, מינימליסטי ומודרני (Pure Black & Ultra Clean Minimalist).
+
+- Completed: Removed the large hero banner and image assets. Applied a true black (#000000) minimalist theme with subtle dark borders (#18181b), clean Inter typography, refined character cards, minimalist filter bar, and streamlined detail modal in src/index.css and components.
+
+

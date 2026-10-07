@@ -26,7 +26,6 @@ export default function CharacterDetail({
       : 'status-unknown';
 
   const episodeCount = character.episode ? character.episode.length : 0;
-  const formattedId = `#${String(character.id).padStart(3, '0')}`;
 
   return (
     <div
@@ -40,32 +39,14 @@ export default function CharacterDetail({
         className="detail-modal"
         onClick={(e) => e.stopPropagation()}
       >
-        <div className="modal-top-bar">
-          <span className="modal-folio-tag">
-            [AS] ARCHIVE // ID: {formattedId}
-          </span>
-          <button
-            type="button"
-            className="modal-close-button"
-            onClick={onClose}
-            aria-label="Close details"
-          >
-            <svg
-              width="18"
-              height="18"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              aria-hidden="true"
-            >
-              <line x1="18" y1="6" x2="6" y2="18" />
-              <line x1="6" y1="6" x2="18" y2="18" />
-            </svg>
-          </button>
-        </div>
+        <button
+          type="button"
+          className="modal-close-button"
+          onClick={onClose}
+          aria-label="Close details"
+        >
+          ✕
+        </button>
 
         <div className="detail-layout">
           <div className="detail-portrait-column">
@@ -75,9 +56,6 @@ export default function CharacterDetail({
                 alt={character.name}
                 className="detail-image"
               />
-            </div>
-            <div className="detail-portrait-caption">
-              <span>MULTIVERSE ENTITY DOSSIER</span>
             </div>
           </div>
 
@@ -90,7 +68,7 @@ export default function CharacterDetail({
               <div className="detail-badges-row">
                 <div className="detail-status-pill">
                   <span className={`status-dot ${statusColorClass}`} />
-                  <span className="status-text-pill">{character.status.toUpperCase()}</span>
+                  <span className="status-text-pill">{character.status}</span>
                 </div>
                 {onToggleFavorite && (
                   <button
@@ -101,8 +79,8 @@ export default function CharacterDetail({
                     <svg
                       className="favorite-svg-icon"
                       viewBox="0 0 24 24"
-                      fill={isFavorite ? '#fbbf24' : 'none'}
-                      stroke={isFavorite ? '#fbbf24' : 'currentColor'}
+                      fill={isFavorite ? '#eab308' : 'none'}
+                      stroke={isFavorite ? '#eab308' : 'currentColor'}
                       strokeWidth="2"
                       strokeLinecap="round"
                       strokeLinejoin="round"
@@ -110,7 +88,7 @@ export default function CharacterDetail({
                     >
                       <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
                     </svg>
-                    <span>{isFavorite ? 'IN FAVORITES' : 'ADD TO FAVORITES'}</span>
+                    <span>{isFavorite ? 'Saved' : 'Save to Favorites'}</span>
                   </button>
                 )}
               </div>
@@ -118,52 +96,42 @@ export default function CharacterDetail({
 
             <div className="detail-spec-sheet">
               <div className="spec-row">
-                <span className="spec-label">SPECIES</span>
+                <span className="spec-label">Species</span>
                 <span className="spec-value">{character.species || 'Unknown'}</span>
               </div>
 
               <div className="spec-row">
-                <span className="spec-label">GENDER</span>
+                <span className="spec-label">Gender</span>
                 <span className="spec-value">{character.gender || 'Unknown'}</span>
               </div>
 
               {character.type && (
                 <div className="spec-row">
-                  <span className="spec-label">CLASSIFICATION</span>
+                  <span className="spec-label">Type</span>
                   <span className="spec-value">{character.type}</span>
                 </div>
               )}
 
               <div className="spec-row">
-                <span className="spec-label">ORIGIN</span>
+                <span className="spec-label">Origin</span>
                 <span className="spec-value">
                   {character.origin?.name || 'Unknown'}
                 </span>
               </div>
 
               <div className="spec-row">
-                <span className="spec-label">LAST LOCATION</span>
+                <span className="spec-label">Location</span>
                 <span className="spec-value">
                   {character.location?.name || 'Unknown'}
                 </span>
               </div>
 
               <div className="spec-row">
-                <span className="spec-label">EPISODES</span>
+                <span className="spec-label">Episodes</span>
                 <span className="spec-value">
                   {episodeCount} {episodeCount === 1 ? 'Episode' : 'Episodes'}
                 </span>
               </div>
-            </div>
-
-            <div className="detail-footer">
-              <button
-                type="button"
-                className="detail-close-btn"
-                onClick={onClose}
-              >
-                CLOSE DOSSIER
-              </button>
             </div>
           </div>
         </div>

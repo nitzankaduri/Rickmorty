@@ -24,8 +24,6 @@ export default function CharacterCard({
     }
   };
 
-  const formattedId = `#${String(character.id).padStart(3, '0')}`;
-
   return (
     <article
       className="character-card"
@@ -47,7 +45,6 @@ export default function CharacterCard({
           className="card-image"
           loading="lazy"
         />
-        <div className="card-id-tag">{formattedId}</div>
         {onToggleFavorite && (
           <button
             type="button"
@@ -59,8 +56,8 @@ export default function CharacterCard({
             <svg
               className="favorite-svg-icon"
               viewBox="0 0 24 24"
-              fill={isFavorite ? '#fbbf24' : 'none'}
-              stroke={isFavorite ? '#fbbf24' : 'currentColor'}
+              fill={isFavorite ? '#eab308' : 'none'}
+              stroke={isFavorite ? '#eab308' : 'currentColor'}
               strokeWidth="2"
               strokeLinecap="round"
               strokeLinejoin="round"
@@ -77,11 +74,11 @@ export default function CharacterCard({
           {character.name}
         </h3>
         <div className="card-meta-row">
-          <span className="card-species">{character.species.toUpperCase()}</span>
-          <span className="card-meta-divider" aria-hidden="true">//</span>
+          <span className="card-species">{character.species}</span>
+          <span className="card-meta-dot" aria-hidden="true">·</span>
           <div className="card-status-wrapper">
             <span className={`status-dot ${statusColorClass}`} aria-hidden="true" />
-            <span className="status-name">{character.status.toUpperCase()}</span>
+            <span className="status-name">{character.status}</span>
           </div>
         </div>
       </div>
