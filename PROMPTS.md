@@ -92,3 +92,9 @@
 
 - Completed: Implemented .hero-image-wrapper::before atmospheric aura with radial-gradient(circle, rgba(255, 94, 0, 0.35) 0%, rgba(255, 120, 0, 0.15) 45%, rgba(0, 0, 0, 0) 70%), 50px blur, and depth layering behind the masked character visual in src/components/Header.jsx and src/index.css.
 
+**21:38 · antigravity**
+> חיזוק ושדרוג מלא של הילת התאורה האחורית (Prominent & High-Intensity Backlight Aura): הוספת אלמנט הילה ייעודי (.hero-atmospheric-aura) ברוחב 680px ובעוצמת 0.75, שילוב הילה פנימית (.hero-image-wrapper::before) ותאורת קצוות חמה (drop-shadow rim glow) על גבי הדמות.
+
+- Completed: Added dedicated .hero-atmospheric-aura DOM layer inside .hero-stage, styled with high-intensity radial-gradient (rgba(255, 94, 0, 0.75) down to transparent over 680px), boosted core glow on .hero-image-wrapper::before (460px), and added amber rim light drop-shadow to .hero-action-image in src/components/Header.jsx and src/index.css.
+
+
