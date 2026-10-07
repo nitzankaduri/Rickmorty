@@ -81,3 +81,9 @@
 > שילוב ויז'ואל אקשן של ריק ומורטי בעיצוב עריכתי מודרני ואפל (Jay Cole Editorial Style): תמונת דמות ממורכזת עם מסכת דעיכה הדרגתית לשחור מלא, כותרת ענקית "Rick & Morty®" בשכבות עומק (Z-index), גריד 3 טורים עם כוונות פינה (Reticle marks), ופס של 6 כרטיסי קפסולה.
 
 - Completed: Integrated dynamic action asset from https://pngimg.com/d/rick_morty_PNG2.png with onError fallback to local asset. Framed image on true black (#050505) with linear-gradient bottom mask and drop shadow. Layered display title "Rick & Morty®" with negative margin and clamp sizing. Added 3-column sub-hero metadata grid with amber reticles (©2026 // ARCHIVE, SPECIMENS, MULTIVERSE UI/UX), Jay Cole style top navbar with status pill and menu capsule, and 6-capsule partner cards strip in src/components/Header.jsx and src/index.css.
+
+**21:28 · antigravity**
+> דיוק פיקסלים מלא (Pixel-Perfect) של סגנון Jay Cole: שכבות תלת-ממדיות עם z-index מדויק (Layer 1 רקע שחור מלא, Layer 2 דמות עם מסכת דעיכה, Layer 3 כותרת ענקית חופפת עם סמל מסחרי עגול), סרגל עליון צף עם תג Available זוהר, 3 טורי מידע עם כוונות פינה (Reticle marks ב-CSS pseudo-elements) בגוון #ff5e00, ורצועת 6 קפסולות.
+
+- Completed: Re-architected Header.jsx and index.css with exact 3-layer depth model. Added glowing amber dot (#ff5e00) pill badge with "Available", floating "Menu" capsule button with 2-bar icon, clamp(4.5rem, 14vw, 11rem) display title with 0.85 line-height and trademark badge, editorial columns with ::before orange corner marks, slate subtext (#737373), and responsive container spacing.
+

@@ -20,21 +20,21 @@ export default function Header() {
 
   return (
     <header className="hero-editorial-section">
-      {/* Top Navigation Bar (Jay Cole Style) */}
+      {/* Top Floating Navigation Bar (Jay Cole Exact Replication) */}
       <nav className="editorial-navbar" aria-label="Main Navigation">
         <div className="editorial-brand-group">
           <a href="#characters" className="editorial-brand-title">
-            Rick &amp; Morty<sup>®</sup>
+            Rick &amp; Morty<span className="brand-trademark">®</span>
           </a>
           <div className="status-indicator-pill">
             <span className="amber-dot" aria-hidden="true" />
-            <span>Dimension C-137</span>
+            <span className="pill-text">Available</span>
           </div>
         </div>
 
         <div className="editorial-nav-right">
-          <a href="#characters" className="menu-capsule-btn" aria-label="Explore Character Archive">
-            <span>Explore</span>
+          <a href="#characters" className="menu-capsule-btn" aria-label="Menu and Archive Navigation">
+            <span>Menu</span>
             <span className="hamburger-icon" aria-hidden="true">
               <span className="bar" />
               <span className="bar" />
@@ -43,13 +43,14 @@ export default function Header() {
         </div>
       </nav>
 
-      {/* Hero Stage: Centered Art with Lower Mask & Overlay Display Title */}
+      {/* Hero Stage: 3D Depth Layering (Portrait in Layer 2, Title in Layer 3) */}
       <div className="hero-stage">
+        {/* Layer 2: Character Portrait with bottom fade mask */}
         <div className="hero-artwork-frame">
           {!hasError && (
             <img
               src={imageSrc}
-              alt="Rick and Morty dynamic action visual"
+              alt="Rick & Morty dynamic visual"
               className="hero-action-image"
               onError={handleImageError}
               loading="eager"
@@ -57,70 +58,61 @@ export default function Header() {
           )}
         </div>
 
-        {/* Display Title across lower-center section of character art */}
+        {/* Layer 3: Foreground Hero Title overlapping the lower third of the portrait */}
         <h1 className="hero-display-title">
-          Rick &amp; Morty<sup>®</sup>
+          Rick &amp; Morty<span className="trademark-circle-badge">®</span>
         </h1>
       </div>
 
-      {/* 3-Column Editorial Grid (Sub-Hero Information) */}
+      {/* 3-Column Editorial Metadata Row with Orange Corner Reticles */}
       <div className="subhero-editorial-grid">
         <div className="editorial-col">
-          <div className="reticle-header">
-            <span className="reticle-corner" aria-hidden="true" />
-            <h2 className="reticle-label">©2026 // ARCHIVE</h2>
-          </div>
-          <p className="editorial-col-text">
-            Dimension C-137 catalog. Exploring interdimensional entities and timelines that captivate across infinite realities.
+          <h2 className="editorial-col-title">©2026</h2>
+          <p className="editorial-col-subtext">
+            Designing digital experiences that captivate, connect, and convert across dimensions.
           </p>
         </div>
 
         <div className="editorial-col">
-          <div className="reticle-header">
-            <span className="reticle-corner" aria-hidden="true" />
-            <h2 className="reticle-label">SPECIMENS</h2>
-          </div>
-          <p className="editorial-col-text">
-            Indexed archive of living organisms, alien species, cosmic travelers, and Citadel council dossiers.
+          <h2 className="editorial-col-title">Multiverse</h2>
+          <p className="editorial-col-subtext">
+            We craft bold, memorable dimensional archives that tell stories and leave a lasting impression.
           </p>
         </div>
 
         <div className="editorial-col">
-          <div className="reticle-header">
-            <span className="reticle-corner" aria-hidden="true" />
-            <h2 className="reticle-label">MULTIVERSE UI/UX</h2>
-          </div>
-          <p className="editorial-col-text">
-            Live interactive explorer with real-time dossier inspection, status filters, and persistent favorites.
+          <h2 className="editorial-col-title">Specimens</h2>
+          <p className="editorial-col-subtext">
+            Intuitive, user-focused interfaces that elevate engagement and drive seamless interactions.
           </p>
         </div>
       </div>
 
-      {/* 6-Capsule Logos Strip (Jay Cole Style) */}
-      <div className="capsules-strip" aria-label="Multiverse partners and dimensions">
+      {/* 6-Capsule Logos Strip (Jay Cole Screenshot Match) */}
+      <div className="capsules-strip" aria-label="Partner Dimensions and Agencies">
         <div className="capsule-card">
           <span className="capsule-symbol">◐</span>
-          <span>Citadel Fleet</span>
+          <span>Frame Blox</span>
         </div>
         <div className="capsule-card">
           <span className="capsule-symbol">◯</span>
-          <span>Smith Garage</span>
+          <span>Supa Blox</span>
         </div>
         <div className="capsule-card">
           <span className="capsule-symbol">⧖</span>
-          <span>Galactic Fed</span>
+          <span>Hype Blox</span>
         </div>
         <div className="capsule-card">
           <span className="capsule-symbol">⧖</span>
-          <span>Anatomy Park</span>
+          <span>Hype Blox</span>
         </div>
         <div className="capsule-card">
           <span className="capsule-symbol">◐</span>
-          <span>Gazorpazorp</span>
+          <span>Ultra Blox</span>
         </div>
         <div className="capsule-card">
-          <span className="capsule-symbol">⚡</span>
-          <span>Portal Gun</span>
+          <span className="capsule-symbol">⏩</span>
+          <span>Ship Blox</span>
         </div>
       </div>
     </header>
