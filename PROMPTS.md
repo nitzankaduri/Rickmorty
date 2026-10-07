@@ -76,3 +76,8 @@
 > עיצוב מחדש בהשראת תבנית Folioblox: כרטיס Hero ענק ומעוגל ברקע שקיעה כתום זוהר, תמונת סטודיו קולנועית של ריק ומורטי עם משקפי שמש, כותרת ענקית "Rick and Morty", סרגל מדדים תחתון ופס לוגואים בין-ממדיים.
 
 - Completed: Generated cinematic Rick and Morty portrait in public/rick-morty-hero.jpg. Implemented radiant sunset orange hero card with 40px radius, white pill navigation with orange arrow buttons, giant bold "Rick and Morty" typography, 4 numbered metrics (#01-#04), dimensional partner logos strip, editorial intro section ("Behind the Multiverse"), and matching dark cards with warm orange hover glows and amber star favorites across src/components/Header.jsx, src/index.css, and related components.
+
+**21:20 · antigravity**
+> שילוב ויז'ואל אקשן של ריק ומורטי בעיצוב עריכתי מודרני ואפל (Jay Cole Editorial Style): תמונת דמות ממורכזת עם מסכת דעיכה הדרגתית לשחור מלא, כותרת ענקית "Rick & Morty®" בשכבות עומק (Z-index), גריד 3 טורים עם כוונות פינה (Reticle marks), ופס של 6 כרטיסי קפסולה.
+
+- Completed: Integrated dynamic action asset from https://pngimg.com/d/rick_morty_PNG2.png with onError fallback to local asset. Framed image on true black (#050505) with linear-gradient bottom mask and drop shadow. Layered display title "Rick & Morty®" with negative margin and clamp sizing. Added 3-column sub-hero metadata grid with amber reticles (©2026 // ARCHIVE, SPECIMENS, MULTIVERSE UI/UX), Jay Cole style top navbar with status pill and menu capsule, and 6-capsule partner cards strip in src/components/Header.jsx and src/index.css.
