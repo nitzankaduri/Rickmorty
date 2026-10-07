@@ -1,9 +1,11 @@
 import { useState, useEffect } from 'react';
 import Header from './components/Header';
+import FilterBar from './components/FilterBar';
 import CharacterList from './components/CharacterList';
 import CharacterDetail from './components/CharacterDetail';
 import LoadingState from './components/LoadingState';
 import ErrorState from './components/ErrorState';
+import EmptyState from './components/EmptyState';
 
 const API_URL = 'https://rickandmortyapi.com/api/character';
 
@@ -12,6 +14,8 @@ export default function App() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [selectedCharacter, setSelectedCharacter] = useState(null);
+  const [searchTerm, setSearchTerm] = useState('');
+  const [statusFilter, setStatusFilter] = useState('all');
 
   const fetchCharacters = () => {
     setLoading(true);
@@ -62,6 +66,21 @@ export default function App() {
     };
   }, []);
 
+  const handleResetFilters = () => {
+    setSearchTerm('');
+    setStatusFilter('all');
+  };
+
+  const filteredCharacters = characters.filter((character) => {
+    const matchesName = character.name
+      .toLowerCase()
+      .includes(searchTerm.toLowerCase().trim());
+    const matchesStatus =
+      statusFilter === 'all' ||
+      character.status.toLowerCase() === statusFilter.toLowerCase();
+    return matchesName && matchesStatus;
+  });
+
   return (
     <div className="app-container">
       <Header />
@@ -69,11 +88,31 @@ export default function App() {
         {loading && <LoadingState message="Connecting to dimension C-137..." />}
         {!loading && error && <ErrorState message={error} onRetry={fetchCharacters} />}
         {!loading && !error && (
-          <CharacterList
-            characters={characters}
-            onSelectCharacter={(char) => setSelectedCharacter(char)}
-          />
+          <>
+            <FilterBar
+              searchTerm={searchTerm}
+              onSearchChange={setSearchTerm}
+              statusFilter={statusFilter}
+              onStatusChange={setStatusFilter}
+              resultCount={filteredCharacters.length}
+              onReset={handleResetFilters}
+            />
+
+            {filteredCharacters.length === 0 ? (
+              <EmptyState
+                searchTerm={searchTerm}
+                statusFilter={statusFilter}
+                onReset={handleResetFilters}
+              />
+            ) : (
+              <CharacterList
+                characters={filteredCharacters}
+                onSelectCharacter={(char) => setSelectedCharacter(char)}
+              />
+            )}
+          </>
         )}
+
         {selectedCharacter && (
           <CharacterDetail
             character={selectedCharacter}

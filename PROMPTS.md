@@ -31,3 +31,8 @@
 > עיצוב ממשק רספונסיבי מודרני בסגנון Rick & Morty Sci-Fi (גריד כרטיסים, אפקטי hover, טיפוגרפיה, מודאל ומצבי מערכת).
 
 - Completed: Overhauled src/index.css with dark sci-fi theme variables, responsive CSS grid, card hover elevations, glowing status indicators, modal transitions, and mobile breakpoints.
+
+**18:58 · antigravity**
+> הוספת שורת חיפוש בזמן אמת לפי שם וסינון לפי סטטוס כולל טיפול במצב ריק (Empty State).
+
+- Completed: Created FilterBar and EmptyState components. Implemented real-time case-insensitive filtering by character name and status, with search reset controls and result counting in App.jsx and src/index.css.
