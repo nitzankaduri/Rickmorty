@@ -1,10 +1,6 @@
-import { useState } from 'react';
-
-const PRIMARY_IMG = 'https://pngimg.com/d/rick_morty_PNG3.png';
-const LOCAL_FALLBACK = '/rick_morty_PNG3.png';
+const imageSrc = '/rick_morty_PNG3.png';
 
 export default function Header() {
-  const [imageSrc, setImageSrc] = useState(PRIMARY_IMG);
 
   return (
     <header className="hero-editorial-section">
@@ -40,9 +36,8 @@ export default function Header() {
         <div className="hero-artwork-frame hero-image-wrapper">
           <img
             src={imageSrc}
-            alt="Rick Sanchez cartoon portrait in lab coat"
+            alt="Rick and Morty dynamic cartoon visual"
             className="hero-action-image"
-            onError={() => setImageSrc(LOCAL_FALLBACK)}
             loading="eager"
           />
         </div>

@@ -102,8 +102,8 @@
 
 - Completed: Replaced the flat 2D cartoon image with a high-fashion realistic Rick Sanchez editorial portrait (public/rick-jay-cole.jpg) matching the exact Jay Cole photo styling, orange puffer coat, translucent glowing glasses, and rim lighting. Seamlessly layered under the giant display title "Rick & Morty®" with lower-edge fade mask in src/components/Header.jsx and src/index.css.
 
-**22:18 · antigravity**
-> הטמעת תמונת הציור המדויקת של ריק סנצ'ז (rick_morty_PNG3.png) עם חלוק המעבדה והילת התאורה האחורית: שילוב תמונת ה-PNG השקופה עם הילת תאורה רדיאלית ענברית מרהיבה, מסכת דעיכה לשחור בחלק התחתון וחפיפת כותרת ענקית בסגנון Jay Cole.
+**22:25 · antigravity**
+> עדכון והחלפת התמונה ישירות ל-rick_morty_PNG3.png: תיקון הפניית ה-src לתמונה המדויקת שנשלחה (ציור של ריק סנצ'ז עם חלוק המעבדה ופיו הפתוח), והצגתה עם הילת התאורה הרדיאלית הכתומה, מסכת הדעיכה לשחור והחפיפה התלת-ממדית.
 
-- Completed: Integrated official PNG vector asset https://pngimg.com/d/rick_morty_PNG3.png with local caching in public/rick_morty_PNG3.png. Styled with .hero-atmospheric-aura (warm amber radial gradient), rim drop-shadow, and linear-gradient bottom fade mask layered directly under the massive display title "Rick & Morty®" in src/components/Header.jsx and src/index.css.
+- Completed: Updated Header.jsx to directly render /rick_morty_PNG3.png matching the requested cartoon URL. Confirmed 0 lint errors, built cleanly, and verified exact rendering via live browser capture.
 
