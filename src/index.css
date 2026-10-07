@@ -184,31 +184,7 @@ body {
   padding-top: 1rem;
 }
 
-/* Layer 1: Vibrant Amber Atmospheric Backlight Aura (The Defining Jay Cole Lighting) */
-.hero-atmospheric-aura {
-  position: absolute;
-  top: 18%;
-  left: 50%;
-  transform: translate(-50%, -15%);
-  width: 680px;
-  height: 680px;
-  max-width: 95vw;
-  max-height: 95vw;
-  border-radius: 50%;
-  background: radial-gradient(
-    circle,
-    rgba(255, 94, 0, 0.75) 0%,
-    rgba(255, 125, 0, 0.5) 30%,
-    rgba(234, 88, 12, 0.28) 52%,
-    rgba(255, 94, 0, 0.1) 70%,
-    transparent 85%
-  );
-  filter: blur(55px);
-  z-index: 1;
-  pointer-events: none;
-}
-
-/* Layer 2: Central Portrait with bottom mask & Atmospheric Backlit Aura */
+/* Layer 2: Central Portrait with bottom mask */
 .hero-artwork-frame,
 .hero-image-wrapper {
   position: relative;
@@ -216,32 +192,13 @@ body {
   justify-content: center;
   align-items: flex-end;
   width: 100%;
-  z-index: 2;
-}
-
-.hero-image-wrapper::before {
-  content: '';
-  position: absolute;
-  top: 18%;
-  left: 50%;
-  transform: translate(-50%, -18%);
-  width: 460px;
-  height: 460px;
-  background: radial-gradient(
-    circle,
-    rgba(255, 94, 0, 0.65) 0%,
-    rgba(255, 130, 0, 0.35) 45%,
-    rgba(0, 0, 0, 0) 75%
-  );
-  filter: blur(45px);
-  z-index: 0;
-  pointer-events: none;
+  z-index: 1;
 }
 
 .hero-action-image {
   position: relative;
-  z-index: 2;
-  max-height: 520px;
+  z-index: 1;
+  max-height: 560px;
   width: auto;
   max-width: 90%;
   object-fit: contain;
@@ -249,7 +206,7 @@ body {
   margin: 0 auto;
   -webkit-mask-image: linear-gradient(to bottom, black 65%, transparent 98%);
   mask-image: linear-gradient(to bottom, black 65%, transparent 98%);
-  filter: drop-shadow(0 0 45px rgba(255, 94, 0, 0.45)) drop-shadow(0 20px 40px rgba(0, 0, 0, 0.95));
+  filter: drop-shadow(0 20px 45px rgba(0, 0, 0, 0.95));
   transition: transform 0.4s ease;
 }
 
@@ -259,9 +216,9 @@ body {
 
 /* Layer 3: Foreground Display Title Overlapping the Portrait */
 .hero-display-title {
-  margin: -115px 0 0;
+  margin: -125px 0 0;
   position: relative;
-  z-index: 4;
+  z-index: 3;
   font-size: clamp(4.5rem, 14vw, 11rem);
   font-weight: 800;
   line-height: 0.85;

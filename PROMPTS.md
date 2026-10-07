@@ -97,4 +97,7 @@
 
 - Completed: Added dedicated .hero-atmospheric-aura DOM layer inside .hero-stage, styled with high-intensity radial-gradient (rgba(255, 94, 0, 0.75) down to transparent over 680px), boosted core glow on .hero-image-wrapper::before (460px), and added amber rim light drop-shadow to .hero-action-image in src/components/Header.jsx and src/index.css.
 
+**21:44 · antigravity**
+> יצירה והטמעה של פורטרט סטודיו עריכתי אותנטי של ריק סנצ'ז בהשראת תמונת הרפרנס של Jay Cole: מעיל פוך כתום זוהר, משקפי שמש כתומים מרובעים עם תאורת ניאון, מריחת אור קולנועית (motion streak) סביב הצווארון, ותאורת אולפן חמה ואמיתית על גבי רקע שחור עמוק.
 
+- Completed: Replaced the flat 2D cartoon image with a high-fashion realistic Rick Sanchez editorial portrait (public/rick-jay-cole.jpg) matching the exact Jay Cole photo styling, orange puffer coat, translucent glowing glasses, and rim lighting. Seamlessly layered under the giant display title "Rick & Morty®" with lower-edge fade mask in src/components/Header.jsx and src/index.css.
