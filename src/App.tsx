@@ -1,24 +1,21 @@
 import { useState, useEffect } from 'react';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import Header from './components/Header';
-import FilterBar from './components/FilterBar';
-import CharacterList from './components/CharacterList';
-import CharacterDetail from './components/CharacterDetail';
-import LoadingState from './components/LoadingState';
-import ErrorState from './components/ErrorState';
-import EmptyState from './components/EmptyState';
-import type { Character, CharacterStatus, CharactersApiResponse } from './types/character';
+import HomePage from './pages/HomePage';
+import DetailPage from './pages/DetailPage';
+import FavoritesPage from './pages/FavoritesPage';
+import StatsPage from './pages/StatsPage';
+import NotFoundPage from './pages/NotFoundPage';
+import type { Character, CharactersApiResponse } from './types/character';
 
 const API_URL = 'https://rickandmortyapi.com/api/character';
 const STORAGE_KEY = 'rick_morty_favorites';
 
 export default function App() {
+  const location = useLocation();
   const [characters, setCharacters] = useState<Character[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
-  const [selectedCharacter, setSelectedCharacter] = useState<Character | null>(null);
-  const [searchTerm, setSearchTerm] = useState<string>('');
-  const [statusFilter, setStatusFilter] = useState<CharacterStatus>('all');
-  const [showFavoritesOnly, setShowFavoritesOnly] = useState<boolean>(false);
 
   const [favorites, setFavorites] = useState<number[]>(() => {
     try {
@@ -92,70 +89,86 @@ export default function App() {
     );
   };
 
-  const handleResetFilters = () => {
-    setSearchTerm('');
-    setStatusFilter('all');
-    setShowFavoritesOnly(false);
+  const handleClearFavorites = () => {
+    setFavorites([]);
   };
 
-  const filteredCharacters = characters.filter((character) => {
-    const matchesName = character.name
-      .toLowerCase()
-      .includes(searchTerm.toLowerCase().trim());
-    const matchesStatus =
-      statusFilter === 'all' ||
-      character.status.toLowerCase() === statusFilter.toLowerCase();
-    const matchesFavorite = !showFavoritesOnly || favorites.includes(character.id);
-
-    return matchesName && matchesStatus && matchesFavorite;
-  });
+  const isHome = location.pathname === '/' || location.pathname === '/characters';
 
   return (
     <div className="app-container">
-      <Header />
-      <main className="main-content" id="characters">
-        {loading && <LoadingState message="Connecting to dimension C-137..." />}
-        {!loading && error && <ErrorState message={error} onRetry={fetchCharacters} />}
-        {!loading && !error && (
-          <>
-            <FilterBar
-              searchTerm={searchTerm}
-              onSearchChange={setSearchTerm}
-              statusFilter={statusFilter}
-              onStatusChange={setStatusFilter}
-              showFavoritesOnly={showFavoritesOnly}
-              onToggleFavoritesOnly={() => setShowFavoritesOnly((prev) => !prev)}
-              favoritesCount={favorites.length}
-              resultCount={filteredCharacters.length}
-              onReset={handleResetFilters}
-            />
+      <Header favoritesCount={favorites.length} showHeroBanner={isHome} />
 
-            {filteredCharacters.length === 0 ? (
-              <EmptyState
-                searchTerm={searchTerm}
-                statusFilter={statusFilter}
-                showFavoritesOnly={showFavoritesOnly}
-                onReset={handleResetFilters}
-              />
-            ) : (
-              <CharacterList
-                characters={filteredCharacters}
-                onSelectCharacter={(char) => setSelectedCharacter(char)}
+      <main className="main-content">
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <HomePage
+                characters={characters}
+                loading={loading}
+                error={error}
+                onRetry={fetchCharacters}
                 favorites={favorites}
                 onToggleFavorite={handleToggleFavorite}
               />
-            )}
-          </>
-        )}
-
-        {selectedCharacter && (
-          <CharacterDetail
-            character={selectedCharacter}
-            onClose={() => setSelectedCharacter(null)}
-            isFavorite={favorites.includes(selectedCharacter.id)}
-            onToggleFavorite={handleToggleFavorite}
+            }
           />
-        )}
+          <Route
+            path="/characters"
+            element={
+              <HomePage
+                characters={characters}
+                loading={loading}
+                error={error}
+                onRetry={fetchCharacters}
+                favorites={favorites}
+                onToggleFavorite={handleToggleFavorite}
+              />
+            }
+          />
+          <Route
+            path="/characters/:id"
+            element={
+              <DetailPage
+                characters={characters}
+                favorites={favorites}
+                onToggleFavorite={handleToggleFavorite}
+              />
+            }
+          />
+          <Route
+            path="/items/:id"
+            element={
+              <DetailPage
+                characters={characters}
+                favorites={favorites}
+                onToggleFavorite={handleToggleFavorite}
+              />
+            }
+          />
+          <Route
+            path="/favorites"
+            element={
+              <FavoritesPage
+                characters={characters}
+                favorites={favorites}
+                onToggleFavorite={handleToggleFavorite}
+                onClearFavorites={handleClearFavorites}
+              />
+            }
+          />
+          <Route
+            path="/stats"
+            element={
+              <StatsPage
+                characters={characters}
+                favoritesCount={favorites.length}
+              />
+            }
+          />
+          <Route path="*" element={<NotFoundPage />} />
+        </Routes>
       </main>
     </div>
   );
