@@ -20,7 +20,7 @@
       *Done when:* הפקודה `npm run build` מסתיימת בהצלחה עם 0 שגיאות וכל המשימות מסומנות כהושלמו.
 - [x] **9 · התקנת תלויות TypeScript והגדרת טיפוסים מרכזיים** — התקנת `typescript`, יצירת `tsconfig.json` והגדרת טיפוסים מלאים ללא `any` ב-`src/types/character.ts`.
       *Done when:* קובץ `tsconfig.json` מוגדר וקיים קובץ `src/types/character.ts` עם טיפוסים מלאים.
-- [ ] **10 · המרת רכיבי המערכת ל-TypeScript (.tsx)** — המרת כל רכיבי ה-React וה-Entry Point לקובצי `.tsx`, עם הגדרת טיפוסי Props ו-State מחמירים.
+- [x] **10 · המרת רכיבי המערכת ל-TypeScript (.tsx)** — המרת כל רכיבי ה-React וה-Entry Point לקובצי `.tsx`, עם הגדרת טיפוסי Props ו-State מחמירים.
       *Done when:* כל קובצי ה-JSX מומרים ל-TSX והפקודה `npm run typecheck` עוברת ללא שגיאות.
 - [ ] **11 · ניתוב עם React Router** — התקנת `react-router-dom`, יצירת עמודי רשימה, עמוד פרטי דמות לפי `useParams` (`/characters/:id`), עמוד מועדפים (`/favorites`), עמוד סטטיסטיקות (`/stats`) ועמוד 404, ותפריט ניווט עם `NavLink`.
       *Done when:* הניתוב פועל בין כל העמודים, `useParams` שולף את פרטי הדמות מהכתובת, והניווט עובד חלק.

@@ -1,7 +1,12 @@
+interface ErrorStateProps {
+  message?: string;
+  onRetry?: () => void;
+}
+
 export default function ErrorState({
   message = 'Dimension signal interrupted. Unable to sync character data.',
-  onRetry
-}) {
+  onRetry,
+}: ErrorStateProps) {
   return (
     <div className="status-container error-state" role="alert">
       <div className="status-symbol" aria-hidden="true">✦</div>

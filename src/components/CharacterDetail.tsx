@@ -1,13 +1,21 @@
 import { useEffect } from 'react';
+import type { Character } from '../types/character';
+
+export interface CharacterDetailProps {
+  character: Character | null;
+  onClose: () => void;
+  isFavorite?: boolean;
+  onToggleFavorite?: (id: number) => void;
+}
 
 export default function CharacterDetail({
   character,
   onClose,
   isFavorite = false,
-  onToggleFavorite
-}) {
+  onToggleFavorite,
+}: CharacterDetailProps) {
   useEffect(() => {
-    const handleKeyDown = (e) => {
+    const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'Escape') {
         onClose();
       }

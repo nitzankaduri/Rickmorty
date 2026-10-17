@@ -6,20 +6,21 @@ import CharacterDetail from './components/CharacterDetail';
 import LoadingState from './components/LoadingState';
 import ErrorState from './components/ErrorState';
 import EmptyState from './components/EmptyState';
+import type { Character, CharacterStatus, CharactersApiResponse } from './types/character';
 
 const API_URL = 'https://rickandmortyapi.com/api/character';
 const STORAGE_KEY = 'rick_morty_favorites';
 
 export default function App() {
-  const [characters, setCharacters] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
-  const [selectedCharacter, setSelectedCharacter] = useState(null);
-  const [searchTerm, setSearchTerm] = useState('');
-  const [statusFilter, setStatusFilter] = useState('all');
-  const [showFavoritesOnly, setShowFavoritesOnly] = useState(false);
+  const [characters, setCharacters] = useState<Character[]>([]);
+  const [loading, setLoading] = useState<boolean>(true);
+  const [error, setError] = useState<string | null>(null);
+  const [selectedCharacter, setSelectedCharacter] = useState<Character | null>(null);
+  const [searchTerm, setSearchTerm] = useState<string>('');
+  const [statusFilter, setStatusFilter] = useState<CharacterStatus>('all');
+  const [showFavoritesOnly, setShowFavoritesOnly] = useState<boolean>(false);
 
-  const [favorites, setFavorites] = useState(() => {
+  const [favorites, setFavorites] = useState<number[]>(() => {
     try {
       const saved = localStorage.getItem(STORAGE_KEY);
       return saved ? JSON.parse(saved) : [];
@@ -45,13 +46,13 @@ export default function App() {
         if (!res.ok) {
           throw new Error(`Failed to fetch characters (Status: ${res.status})`);
         }
-        return res.json();
+        return res.json() as Promise<CharactersApiResponse>;
       })
       .then((data) => {
         setCharacters(data.results || []);
         setLoading(false);
       })
-      .catch((err) => {
+      .catch((err: Error) => {
         setError(err.message || 'An unexpected error occurred while fetching.');
         setLoading(false);
       });
@@ -65,7 +66,7 @@ export default function App() {
         if (!res.ok) {
           throw new Error(`Failed to fetch characters (Status: ${res.status})`);
         }
-        return res.json();
+        return res.json() as Promise<CharactersApiResponse>;
       })
       .then((data) => {
         if (!ignore) {
@@ -73,7 +74,7 @@ export default function App() {
           setLoading(false);
         }
       })
-      .catch((err) => {
+      .catch((err: Error) => {
         if (!ignore) {
           setError(err.message || 'An unexpected error occurred while fetching.');
           setLoading(false);
@@ -85,7 +86,7 @@ export default function App() {
     };
   }, []);
 
-  const handleToggleFavorite = (id) => {
+  const handleToggleFavorite = (id: number) => {
     setFavorites((prev) =>
       prev.includes(id) ? prev.filter((favId) => favId !== id) : [...prev, id]
     );

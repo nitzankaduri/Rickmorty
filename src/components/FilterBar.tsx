@@ -1,3 +1,17 @@
+import type { CharacterStatus } from '../types/character';
+
+export interface FilterBarProps {
+  searchTerm: string;
+  onSearchChange: (value: string) => void;
+  statusFilter: CharacterStatus;
+  onStatusChange: (status: CharacterStatus) => void;
+  showFavoritesOnly?: boolean;
+  onToggleFavoritesOnly?: () => void;
+  favoritesCount?: number;
+  resultCount: number;
+  onReset: () => void;
+}
+
 export default function FilterBar({
   searchTerm,
   onSearchChange,
@@ -7,8 +21,8 @@ export default function FilterBar({
   onToggleFavoritesOnly,
   favoritesCount = 0,
   resultCount,
-  onReset
-}) {
+  onReset,
+}: FilterBarProps) {
   const isFiltered =
     searchTerm.trim() !== '' || statusFilter !== 'all' || showFavoritesOnly;
 
@@ -47,7 +61,7 @@ export default function FilterBar({
             id="status-select"
             className="status-select"
             value={statusFilter}
-            onChange={(e) => onStatusChange(e.target.value)}
+            onChange={(e) => onStatusChange(e.target.value as CharacterStatus)}
             aria-label="Filter by status"
           >
             <option value="all">All Statuses</option>

@@ -1,9 +1,19 @@
+import type React from 'react';
+import type { Character } from '../types/character';
+
+export interface CharacterCardProps {
+  character: Character;
+  onSelect?: (character: Character) => void;
+  isFavorite?: boolean;
+  onToggleFavorite?: (id: number) => void;
+}
+
 export default function CharacterCard({
   character,
   onSelect,
   isFavorite = false,
-  onToggleFavorite
-}) {
+  onToggleFavorite,
+}: CharacterCardProps) {
   const statusColorClass =
     character.status === 'Alive'
       ? 'status-alive'
@@ -17,7 +27,7 @@ export default function CharacterCard({
     }
   };
 
-  const handleFavoriteClick = (e) => {
+  const handleFavoriteClick = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.stopPropagation();
     if (onToggleFavorite) {
       onToggleFavorite(character.id);
@@ -28,7 +38,7 @@ export default function CharacterCard({
     <article
       className="character-card"
       onClick={handleCardClick}
-      onKeyDown={(e) => {
+      onKeyDown={(e: React.KeyboardEvent<HTMLElement>) => {
         if (e.key === 'Enter' || e.key === ' ') {
           e.preventDefault();
           handleCardClick();

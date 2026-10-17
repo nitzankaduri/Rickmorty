@@ -1,7 +1,6 @@
 const imageSrc = '/rick_morty_PNG3.png';
 
 export default function Header() {
-
   return (
     <header className="hero-editorial-section">
       {/* Top Floating Navigation Bar (Jay Cole Exact Replication) */}

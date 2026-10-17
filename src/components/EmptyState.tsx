@@ -1,9 +1,18 @@
+import type { CharacterStatus } from '../types/character';
+
+interface EmptyStateProps {
+  searchTerm?: string;
+  statusFilter?: CharacterStatus;
+  showFavoritesOnly?: boolean;
+  onReset?: () => void;
+}
+
 export default function EmptyState({
-  searchTerm,
-  statusFilter,
-  showFavoritesOnly,
-  onReset
-}) {
+  searchTerm = '',
+  statusFilter = 'all',
+  showFavoritesOnly = false,
+  onReset,
+}: EmptyStateProps) {
   return (
     <div className="status-container empty-state" role="status">
       <div className="status-symbol" aria-hidden="true">✦</div>
