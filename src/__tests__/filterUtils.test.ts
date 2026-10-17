@@ -159,3 +159,4 @@ describe('format utilities', () => {
     expect(formatCharacterId(128)).toBe('#0128');
   });
 });
+

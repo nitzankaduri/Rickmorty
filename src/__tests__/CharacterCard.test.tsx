@@ -55,3 +55,4 @@ describe('CharacterCard component', () => {
     expect(handleToggleFavorite).toHaveBeenCalledWith(1);
   });
 });
+

@@ -86,3 +86,4 @@ export function formatEpisodeCount(count: number): string {
 export function formatCharacterId(id: number): string {
   return `#${id.toString().padStart(4, '0')}`;
 }
+

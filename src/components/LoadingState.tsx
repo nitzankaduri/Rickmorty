@@ -10,3 +10,4 @@ export default function LoadingState({ message = 'Scanning dimension C-137...' }
     </div>
   );
 }
+

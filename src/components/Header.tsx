@@ -121,3 +121,4 @@ export default function Header({ favoritesCount = 0, showHeroBanner = true }: He
     </header>
   );
 }
+

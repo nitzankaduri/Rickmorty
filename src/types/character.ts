@@ -51,3 +51,4 @@ export interface MultiverseStats {
   speciesBreakdown: Record<string, number>;
   favoritesCount: number;
 }
+

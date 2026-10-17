@@ -27,3 +27,4 @@ describe('EmptyState component', () => {
     expect(handleReset).toHaveBeenCalledTimes(1);
   });
 });
+
