@@ -129,6 +129,12 @@
 
 - Completed: Installed Vitest, @vitest/ui, jsdom, and testing-library. Configured vite.config.ts and test setup. Wrote comprehensive unit tests across filterUtils.test.ts, CharacterCard.test.tsx, and EmptyState.test.tsx, verifying 14/14 passing tests via npm test.
 
+**14:54 · antigravity**
+> עדכון וסנכרון מלא של כל מסמכי הפרויקט בהתאם להנחיות ולדרישות החובה: כתיבת מסמך README.md מפורט ומקיף (הסבר על האפליקציה, הרצת פיתוח ובדיקות, פירוט ה-API והרכיבים), עדכון AGENTS.md, שדרוג ה-PRD.md עם נתיבי React Router ובדיקות Vitest, והרצת אימות מלאה (typecheck, lint, build, test).
+
+- Completed: Updated README.md, AGENTS.md, PRD.md, and tasks.md to match all mandatory rubric criteria. Successfully verified typecheck, production build, oxlint, and 14/14 passing Vitest tests with zero errors.
+
+
 
 
 
