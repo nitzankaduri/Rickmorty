@@ -184,31 +184,7 @@ body {
   padding-top: 1rem;
 }
 
-/* Layer 1: Atmospheric Backlight Glow (Warm Amber Studio Aura) */
-.hero-atmospheric-aura {
-  position: absolute;
-  top: 30%;
-  left: 50%;
-  transform: translate(-50%, -30%);
-  width: 540px;
-  height: 540px;
-  max-width: 90vw;
-  max-height: 90vw;
-  border-radius: 50%;
-  background: radial-gradient(
-    circle,
-    rgba(255, 94, 0, 0.75) 0%,
-    rgba(255, 120, 0, 0.45) 30%,
-    rgba(255, 94, 0, 0.2) 55%,
-    rgba(255, 94, 0, 0.05) 70%,
-    transparent 80%
-  );
-  filter: blur(50px);
-  z-index: 0;
-  pointer-events: none;
-}
-
-/* Layer 2: Central Portrait with bottom mask */
+/* Central Portrait */
 .hero-artwork-frame,
 .hero-image-wrapper {
   position: relative;
@@ -217,20 +193,6 @@ body {
   align-items: flex-end;
   width: 100%;
   z-index: 1;
-}
-
-.hero-image-wrapper::before {
-  content: '';
-  position: absolute;
-  top: 20%;
-  left: 50%;
-  transform: translate(-50%, -20%);
-  width: 380px;
-  height: 380px;
-  background: radial-gradient(circle, rgba(255, 94, 0, 0.6) 0%, rgba(255, 120, 0, 0.3) 45%, rgba(0, 0, 0, 0) 70%);
-  filter: blur(45px);
-  z-index: 0;
-  pointer-events: none;
 }
 
 .hero-action-image {
@@ -242,9 +204,7 @@ body {
   object-fit: contain;
   display: block;
   margin: 0 auto;
-  -webkit-mask-image: linear-gradient(to bottom, black 65%, transparent 98%);
-  mask-image: linear-gradient(to bottom, black 65%, transparent 98%);
-  filter: drop-shadow(0 0 35px rgba(255, 94, 0, 0.55)) drop-shadow(0 20px 45px rgba(0, 0, 0, 0.95));
+  filter: none;
   transition: transform 0.4s ease;
 }
 

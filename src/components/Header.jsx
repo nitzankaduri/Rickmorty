@@ -27,12 +27,9 @@ export default function Header() {
         </div>
       </nav>
 
-      {/* Hero Stage: 3D Depth Layering (Aura in Layer 1, Portrait in Layer 2, Title in Layer 3) */}
+      {/* Hero Stage */}
       <div className="hero-stage">
-        {/* Layer 1: Atmospheric Backlight Aura (Warm Studio Lighting) */}
-        <div className="hero-atmospheric-aura" aria-hidden="true" />
-
-        {/* Layer 2: Character Portrait with bottom fade mask */}
+        {/* Character Portrait */}
         <div className="hero-artwork-frame hero-image-wrapper">
           <img
             src={imageSrc}
