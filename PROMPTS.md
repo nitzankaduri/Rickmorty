@@ -102,8 +102,16 @@
 
 - Completed: Replaced the flat 2D cartoon image with a high-fashion realistic Rick Sanchez editorial portrait (public/rick-jay-cole.jpg) matching the exact Jay Cole photo styling, orange puffer coat, translucent glowing glasses, and rim lighting. Seamlessly layered under the giant display title "Rick & Morty®" with lower-edge fade mask in src/components/Header.jsx and src/index.css.
 
-**22:25 · antigravity**
-> עדכון והחלפת התמונה ישירות ל-rick_morty_PNG3.png: תיקון הפניית ה-src לתמונה המדויקת שנשלחה (ציור של ריק סנצ'ז עם חלוק המעבדה ופיו הפתוח), והצגתה עם הילת התאורה הרדיאלית הכתומה, מסכת הדעיכה לשחור והחפיפה התלת-ממדית.
+**22:31 · antigravity**
+> הסרת הילת התאורה האחורית, אפקטי הטשטוש ומסכת הדעיכה סביב תמונת הדמות: הצגת איור הדמות באופן חד, נקי וללא עיוותים ויזואליים.
 
-- Completed: Updated Header.jsx to directly render /rick_morty_PNG3.png matching the requested cartoon URL. Confirmed 0 lint errors, built cleanly, and verified exact rendering via live browser capture.
+- Completed: Removed .hero-atmospheric-aura element, stripped mask-image and filter drop-shadow properties from .hero-action-image, ensuring crisp and clean character artwork on deep black background.
+
+## 2026-10-17
+
+**14:35 · antigravity**
+> התאמת הפרויקט להנחיות החדשות של פרויקט הגמר: התקנת TypeScript, יצירת קובץ tsconfig.json והגדרת טיפוסים (interfaces/types) מלאים ללא any עבור כל ישויות ה-API, המיקומים והמסננים.
+
+- Completed: Configured TypeScript compiler options in tsconfig.json, added @types packages and typecheck script, and declared strict Character, LocationReference, CharacterFilters, and MultiverseStats interfaces in src/types/character.ts.
+
 

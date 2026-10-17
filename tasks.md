@@ -18,3 +18,16 @@
       *Done when:* סימון דמות כמועדפת נשמר ונטען מחדש לאחר רענון הדף (F5).
 - [x] **8 · ביקורת איכות ובדיקת Build סופית** — הרצת `npm run build` ו-`npm run lint`, בדיקת רכיבים, השלמת תיעוד יומן ב-`PROMPTS.md`.
       *Done when:* הפקודה `npm run build` מסתיימת בהצלחה עם 0 שגיאות וכל המשימות מסומנות כהושלמו.
+- [x] **9 · התקנת תלויות TypeScript והגדרת טיפוסים מרכזיים** — התקנת `typescript`, יצירת `tsconfig.json` והגדרת טיפוסים מלאים ללא `any` ב-`src/types/character.ts`.
+      *Done when:* קובץ `tsconfig.json` מוגדר וקיים קובץ `src/types/character.ts` עם טיפוסים מלאים.
+- [ ] **10 · המרת רכיבי המערכת ל-TypeScript (.tsx)** — המרת כל רכיבי ה-React וה-Entry Point לקובצי `.tsx`, עם הגדרת טיפוסי Props ו-State מחמירים.
+      *Done when:* כל קובצי ה-JSX מומרים ל-TSX והפקודה `npm run typecheck` עוברת ללא שגיאות.
+- [ ] **11 · ניתוב עם React Router** — התקנת `react-router-dom`, יצירת עמודי רשימה, עמוד פרטי דמות לפי `useParams` (`/characters/:id`), עמוד מועדפים (`/favorites`), עמוד סטטיסטיקות (`/stats`) ועמוד 404, ותפריט ניווט עם `NavLink`.
+      *Done when:* הניתוב פועל בין כל העמודים, `useParams` שולף את פרטי הדמות מהכתובת, והניווט עובד חלק.
+- [ ] **12 · התקנת Vitest וסביבת בדיקות** — התקנת `vitest`, `@vitest/ui`, `@testing-library/react`, `jsdom` והגדרת סקריפטים `test` ו-`test:ui`.
+      *Done when:* סביבת הבדיקות מוגדרת ופקודת `npm test` פועלת בהצלחה.
+- [ ] **13 · כתיבת בדיקות יחידה מקיפות (Unit Tests)** — כתיבת לפחות 5 בדיקות יחידה שעוברות בהצלחה עם `npm test` על לוגיקת סינון, עיבוד נתונים מה-API ורכיבי ממשק.
+      *Done when:* לפחות 5 בדיקות יחידה עוברות ב-Vitest עם 100% הצלחה.
+- [ ] **14 · סנכרון תיעוד, בדיקת Build סופית והגשה** — עדכון `README.md`, `AGENTS.md`, `PRD.md`, ואימות ש-`npm run build`, `npm test` ו-`oxlint` עוברים ב-0 שגיאות.
+      *Done when:* כל דרישות החובה מסומנות, הבדיקות וה-build עוברים, והפרויקט מוכן להגנה.
+
