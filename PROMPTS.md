@@ -134,6 +134,13 @@
 
 - Completed: Updated README.md, AGENTS.md, PRD.md, and tasks.md to match all mandatory rubric criteria. Successfully verified typecheck, production build, oxlint, and 14/14 passing Vitest tests with zero errors.
 
+## 2026-11-02
+
+**21:05 · antigravity**
+> עידון והטמעת מסכת דעיכה הדרגתית (Soft Fade Gradient Mask) בחלק התחתון של תמונת הדמות: יצירת מעבר שקיפות חלק ורך המעלים את קו החיתוך הישר של התמונה וממזג את תחתית החלוק של ריק ברקע השחור באופן אלגנטי ונטול עיוותים.
+
+- Completed: Configured modern multi-step linear gradient mask on .hero-action-image (-webkit-mask-image and mask-image) smoothly dissolving the bottom edge from solid opacity down to transparent across 45%-96%, seamlessly blending Rick into the pitch black background without any sharp cut-off.
+
 
 
 
