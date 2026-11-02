@@ -34,3 +34,6 @@
 ## 6. Data Contract
 - **API:** `https://rickandmortyapi.com/api/character`
 - **TypeScript Interface:** `Character` (`id`, `name`, `status`, `species`, `gender`, `origin`, `location`, `image`, `episode`).
+
+## 7. Architecture & System Design
+- פירוט מבנה הרכיבים, ניהול ה-State וזרימת המידע (Props Flow) מתועדים במלואם ב-[docs/architecture.md](docs/architecture.md).
