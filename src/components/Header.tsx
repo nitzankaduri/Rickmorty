@@ -68,52 +68,52 @@ export default function Header({ favoritesCount = 0, showHeroBanner = true }: He
           {/* 3-Column Editorial Metadata Row with Orange Corner Reticles */}
           <div className="subhero-editorial-grid">
             <div className="editorial-col">
-              <h2 className="editorial-col-title">©2026</h2>
+              <h2 className="editorial-col-title">©C-137</h2>
               <p className="editorial-col-subtext">
-                Designing digital experiences that captivate, connect, and convert across dimensions.
+                Traversing infinite realities with reckless genius, questioning existence, and avoiding galactic federation bureaucracy.
               </p>
             </div>
 
             <div className="editorial-col">
-              <h2 className="editorial-col-title">Multiverse</h2>
+              <h2 className="editorial-col-title">Portal Travel</h2>
               <p className="editorial-col-subtext">
-                We craft bold, memorable dimensional archives that tell stories and leave a lasting impression.
+                We craft unstable dimensional gateways, jump through green portals, and escape cosmic horror with minimal effort.
               </p>
             </div>
 
             <div className="editorial-col">
               <h2 className="editorial-col-title">Specimens</h2>
               <p className="editorial-col-subtext">
-                Intuitive, user-focused interfaces that elevate engagement and drive seamless interactions.
+                Analysis and containment of bizarre alien lifeforms, Cronenbergs, and highly dangerous interdimensional entities.
               </p>
             </div>
           </div>
 
           {/* 6-Capsule Logos Strip */}
-          <div className="capsules-strip" aria-label="Partner Dimensions and Agencies">
+          <div className="capsules-strip" aria-label="Portal Shortcuts and Gadgets">
             <div className="capsule-card">
               <span className="capsule-symbol">◐</span>
-              <span>Frame Blox</span>
+              <span>Portal Gun</span>
             </div>
             <div className="capsule-card">
               <span className="capsule-symbol">◯</span>
-              <span>Supa Blox</span>
+              <span>Wubba Lubba</span>
             </div>
             <div className="capsule-card">
               <span className="capsule-symbol">⧖</span>
-              <span>Hype Blox</span>
+              <span>Get Schwifty</span>
             </div>
             <div className="capsule-card">
               <span className="capsule-symbol">⧖</span>
-              <span>Hype Blox</span>
+              <span>Plumbus</span>
             </div>
             <div className="capsule-card">
               <span className="capsule-symbol">◐</span>
-              <span>Ultra Blox</span>
+              <span>Microverse</span>
             </div>
             <div className="capsule-card">
               <span className="capsule-symbol">⏩</span>
-              <span>Ship Blox</span>
+              <span>Space Cruiser</span>
             </div>
           </div>
         </>
